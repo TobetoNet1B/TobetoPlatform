@@ -17,7 +17,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace Application;
-
+//tantuni
 public static class ApplicationServiceRegistration
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
