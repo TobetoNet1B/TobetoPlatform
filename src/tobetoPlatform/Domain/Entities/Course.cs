@@ -4,7 +4,7 @@ namespace Domain.Entities;
 public class Course: Entity<Guid>
 {
     public string Name { get; set; }
-    public string? CourseTitle { get; set; }// Dijital gelişim, Profesyonel gelişim
+    public string? CourseTitle { get; set; }// Dijital gelişim, Profesyonel gelişim vb.
     public string? Description { get; set; }
     public int? CourseLevel { get; set; }
     public string? ImgUrl { get; set; }
