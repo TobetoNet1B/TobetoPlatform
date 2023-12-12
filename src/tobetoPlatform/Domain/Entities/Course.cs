@@ -17,8 +17,6 @@ public class Course: Entity<Guid>
     public List<CourseParticipant> CourseParticipants { get; set; }
     public List<CourseCategory> CourseCategories { get; set; }
     public List<CourseInstructor> CourseInstructors { get; set; }
-    public Guid? LanguageId { get; set; }
-    public Language CourseLanguage { get; set; }
     public string ActivityStatus { get; set; }
 
 }

@@ -1,7 +1,7 @@
 ﻿using Core.Persistence.Repositories;
 
 namespace Domain.Entities;
-public class Application: Entity<Guid>
+public class Appeal: Entity<Guid>
 {
     // Başvurular
     public string Name { get; set; }
