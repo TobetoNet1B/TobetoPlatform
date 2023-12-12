@@ -1,9 +1,10 @@
 ﻿using Core.Persistence.Repositories;
 
 namespace Domain.Entities;
-public class Ability: Entity<Guid>
+public class ParticipantExam: Entity<Guid>
 {
-    public string Name { get; set; }
     public Guid ParticipantId { get; set; }
     public Participant Participant { get; set; }
+    public Guid ExamId { get; set; }
+    public Exam Exam { get; set; }
 }
