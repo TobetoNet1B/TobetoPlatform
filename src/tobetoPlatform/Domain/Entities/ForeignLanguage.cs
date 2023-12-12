@@ -6,8 +6,8 @@ namespace Domain.Entities
     {
         public string Name { get; set; }
         public List<Course> Courses { get; set; }
-        public Guid? ParticipantId { get; set; }
-        public Participant Participant { get; set; }
+        public Guid? StudentId { get; set; }
+        public Student Student { get; set; }
         public ForeignLanguageLevel ForeignLanguageLevel { get; set; }
         public Guid ForeignLanguageLevelId { get; set; }
     }

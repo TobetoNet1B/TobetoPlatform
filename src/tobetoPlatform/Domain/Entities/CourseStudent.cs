@@ -1,10 +1,10 @@
 ﻿using Core.Persistence.Repositories;
 
 namespace Domain.Entities;
-public class CourseParticipant: Entity<Guid>
+public class CourseStudent: Entity<Guid>
 {
     public Guid CourseId { get; set; }
     public Course Course { get; set; }
-    public Guid ParticipantId { get; set; }
-    public Participant Participant { get; set; }
+    public Guid StudentId { get; set; }
+    public Student Student { get; set; }
 }

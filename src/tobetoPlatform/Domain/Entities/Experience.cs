@@ -10,6 +10,6 @@ public class Experience : Entity<Guid>
     public DateTime StartDate { get; set;}
     public DateTime EndDate { get; set;}
     public bool IsContinueJob { get; set;}
-    public Guid ParticipantId { get; set; }
-    public Participant Participant { get; set; }
+    public Guid StudentId { get; set; }
+    public Student Student { get; set; }
 }

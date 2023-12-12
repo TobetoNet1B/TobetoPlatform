@@ -14,7 +14,7 @@ public class Course: Entity<Guid>
     public int? EstimatedTime { get; set; }
     public int? TimeSpent { get; set; }
     public int? Duration { get; set; }
-    public List<CourseParticipant> CourseParticipants { get; set; }
+    public List<CourseStudent> CourseStudents { get; set; }
     public List<CourseCategory> CourseCategories { get; set; }
     public List<CourseInstructor> CourseInstructors { get; set; }
     public string ActivityStatus { get; set; }

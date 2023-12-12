@@ -2,10 +2,10 @@
 using Core.Security.Entities;
 
 namespace Domain.Entities;
-public class Participant : Entity<Guid>
+public class Student : Entity<Guid>
 {
     public User User { get; set; }
-    public Guid UserId { get; set; }
+    public int UserId { get; set; }
     public string? IdentityNumber { get; set; }
     public DateTime BirthDate { get; set;}
     public string PhoneNumber { get; set;}
@@ -18,12 +18,12 @@ public class Participant : Entity<Guid>
     public List<Ability> Abilities { get; set; }
     public List<Appeal> Appeals { get; set; }
     public List<Survey> Surveys { get; set; }
-    public List<CourseParticipant> CourseParticipants { get; set; }
+    public List<CourseStudent> CourseStudents { get; set; }
     public List<Certificate>? Certificates { get; set; }
     public List<SocialMedia>? SocialMedias { get; set; }
     //public List<ForeignLanguageLevel>? ForeignLanguageLevels { get; set; }
     public List<ForeignLanguage>? ForeignLanguages { get; set; }
     public List<Education>? Educations { get; set; }
-    public List<ParticipantExam>? ParticipantExams { get; set; }
+    public List<StudentExam>? StudentExams { get; set; }
     public List<Experience>? Experiences { get; set; }
 }
