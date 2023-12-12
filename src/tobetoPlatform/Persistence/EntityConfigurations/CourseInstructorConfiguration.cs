@@ -17,6 +17,12 @@ public class CourseInstructorConfiguration : IEntityTypeConfiguration<CourseInst
         builder.Property(ci => ci.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(ci => ci.DeletedDate).HasColumnName("DeletedDate");
 
+
+
+        builder.HasOne(b => b.Instructor);
+        builder.HasOne(b => b.Course);
+
+
         builder.HasQueryFilter(ci => !ci.DeletedDate.HasValue);
     }
 }

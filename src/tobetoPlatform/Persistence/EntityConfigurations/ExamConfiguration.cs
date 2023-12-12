@@ -20,6 +20,12 @@ public class ExamConfiguration : IEntityTypeConfiguration<Exam>
         builder.Property(e => e.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(e => e.DeletedDate).HasColumnName("DeletedDate");
 
+
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Exams_Name").IsUnique();
+
+        builder.HasMany(b => b.StudentExams);
+
+
         builder.HasQueryFilter(e => !e.DeletedDate.HasValue);
     }
 }

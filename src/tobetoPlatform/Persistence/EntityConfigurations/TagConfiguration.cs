@@ -16,6 +16,10 @@ public class TagConfiguration : IEntityTypeConfiguration<Tag>
         builder.Property(t => t.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(t => t.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasIndex(indexExpression: b => b.TagName, name: "UK_Tag_Name").IsUnique();
+
+
+
         builder.HasQueryFilter(t => !t.DeletedDate.HasValue);
     }
 }

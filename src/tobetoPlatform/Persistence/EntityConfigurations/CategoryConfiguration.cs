@@ -19,6 +19,11 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Categories_Name").IsUnique();
+
+        builder.HasOne(b => b.CourseCategories);
+
+
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
     }
 }

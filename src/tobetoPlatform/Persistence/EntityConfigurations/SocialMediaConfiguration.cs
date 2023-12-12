@@ -19,6 +19,11 @@ public class SocialMediaConfiguration : IEntityTypeConfiguration<SocialMedia>
         builder.Property(sm => sm.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(sm => sm.DeletedDate).HasColumnName("DeletedDate");
 
+
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_SocialMedias_Name").IsUnique();
+
+        builder.HasOne(b => b.Student);
+
         builder.HasQueryFilter(sm => !sm.DeletedDate.HasValue);
     }
 }

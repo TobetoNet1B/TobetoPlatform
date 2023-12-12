@@ -21,6 +21,7 @@ public class ForeignLanguageConfiguration : IEntityTypeConfiguration<ForeignLang
         builder.HasIndex(indexExpression: b => b.Name, name: "UK_ForeignLanguage_Name").IsUnique();
 
         builder.HasOne(b => b.ForeignLanguageLevel);
+        builder.HasOne(b => b.Student);
 
 
         builder.HasQueryFilter(fl => !fl.DeletedDate.HasValue);

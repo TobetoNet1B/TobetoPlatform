@@ -18,6 +18,12 @@ public class SurveyConfiguration : IEntityTypeConfiguration<Survey>
         builder.Property(s => s.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(s => s.DeletedDate).HasColumnName("DeletedDate");
 
+
+        builder.HasIndex(indexExpression: b => b.Title, name: "UK_Surveys_Name").IsUnique();
+
+        builder.HasOne(b => b.Student);
+
+
         builder.HasQueryFilter(s => !s.DeletedDate.HasValue);
     }
 }
