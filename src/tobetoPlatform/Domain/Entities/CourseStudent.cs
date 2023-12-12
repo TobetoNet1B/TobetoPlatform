@@ -4,7 +4,7 @@ namespace Domain.Entities;
 public class CourseStudent: Entity<Guid>
 {
     public Guid CourseId { get; set; }
-    public Course Course { get; set; }
+    public virtual Course Course { get; set; } = null!;
     public Guid StudentId { get; set; }
-    public Student Student { get; set; }
+    public virtual Student Student { get; set; } = null!;
 }

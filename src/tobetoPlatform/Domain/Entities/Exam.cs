@@ -8,5 +8,5 @@ public class Exam: Entity<Guid>
     public int? Time { get; set; }
     public int? QuestionNumber { get; set; }
     public string? QuestionType { get; set; }
-    public List<StudentExam> StudentExams { get; set; }
+    public virtual ICollection<StudentExam> StudentExams { get; set; } = null!;
 }
