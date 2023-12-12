@@ -14,9 +14,9 @@ public class Course: Entity<Guid>
     public int? EstimatedTime { get; set; }
     public int? TimeSpent { get; set; }
     public int? Duration { get; set; }
+    public string ActivityStatus { get; set; }
     public virtual ICollection<CourseStudent> CourseStudents { get; set; } = null!;
     public virtual ICollection<CourseCategory> CourseCategories { get; set; } = null!;
     public virtual ICollection<CourseInstructor> CourseInstructors { get; set; } = null!;
-    public string ActivityStatus { get; set; }
 
 }
