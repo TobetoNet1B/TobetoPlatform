@@ -4,12 +4,14 @@ using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Exceptions.Types;
 using Core.Persistence.Paging;
 using Domain.Entities;
+using Nest;
 
 namespace Application.Features.Certificates.Rules;
 
 public class CertificateBusinessRules : BaseBusinessRules
 {
     private readonly ICertificateRepository _certificateRepository;
+
 
     public CertificateBusinessRules(ICertificateRepository certificateRepository)
     {
@@ -32,5 +34,11 @@ public class CertificateBusinessRules : BaseBusinessRules
         );
         await CertificateShouldExistWhenSelected(certificate);
     }
-  
+    public async Task FileTypeNotPdf(string fileType)
+    {
+        if (!fileType.ToLower().EndsWith(".pdf"))
+        {
+            throw new Exception("Invalid file type. FileType must end with '.pdf'.");
+        }
+    }
 }
