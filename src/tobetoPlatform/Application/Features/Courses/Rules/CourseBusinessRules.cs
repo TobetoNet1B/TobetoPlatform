@@ -2,6 +2,7 @@ using Application.Features.Courses.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Exceptions.Types;
+using Core.Persistence.Paging;
 using Domain.Entities;
 
 namespace Application.Features.Courses.Rules;
@@ -30,5 +31,11 @@ public class CourseBusinessRules : BaseBusinessRules
             cancellationToken: cancellationToken
         );
         await CourseShouldExistWhenSelected(course);
+    }
+    public async Task CourseNameCanNotBeDuplicationWhenInserted(string name)
+    {
+        IPaginate<Course> result = await _courseRepository.GetListAsync(c => c.Name == name);
+        if (result.Items.Any())
+            throw new Exception("Course name exitst");
     }
 }

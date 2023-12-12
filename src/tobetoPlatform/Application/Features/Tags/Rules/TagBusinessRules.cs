@@ -2,6 +2,7 @@ using Application.Features.Tags.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Exceptions.Types;
+using Core.Persistence.Paging;
 using Domain.Entities;
 
 namespace Application.Features.Tags.Rules;
@@ -30,5 +31,11 @@ public class TagBusinessRules : BaseBusinessRules
             cancellationToken: cancellationToken
         );
         await TagShouldExistWhenSelected(tag);
+    }
+    public async Task TagNameCanBotBeDuplicationWhenInserted(string name)
+    {
+        IPaginate<Tag> result = await _tagRepository.GetListAsync(c => c.TagName == name);
+        if (result.Items.Any())
+            throw new Exception("Tag name exitst");
     }
 }

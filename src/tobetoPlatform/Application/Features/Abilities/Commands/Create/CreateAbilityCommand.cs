@@ -27,6 +27,7 @@ public class CreateAbilityCommand : IRequest<CreatedAbilityResponse>
 
         public async Task<CreatedAbilityResponse> Handle(CreateAbilityCommand request, CancellationToken cancellationToken)
         {
+            await _abilityBusinessRules.AbilityNameCanBotBeDuplicationWhenInserted(request.Name);
             Ability ability = _mapper.Map<Ability>(request);
 
             await _abilityRepository.AddAsync(ability);

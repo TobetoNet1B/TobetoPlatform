@@ -26,6 +26,7 @@ public class CreateTagCommand : IRequest<CreatedTagResponse>
 
         public async Task<CreatedTagResponse> Handle(CreateTagCommand request, CancellationToken cancellationToken)
         {
+            await _tagBusinessRules.TagNameCanBotBeDuplicationWhenInserted(request.TagName);
             Tag tag = _mapper.Map<Tag>(request);
 
             await _tagRepository.AddAsync(tag);
