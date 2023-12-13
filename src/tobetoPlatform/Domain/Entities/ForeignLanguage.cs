@@ -5,9 +5,17 @@ namespace Domain.Entities
     public class ForeignLanguage : Entity<Guid>
     {
         public string Name { get; set; }
-        public Guid? StudentId { get; set; }
-        public virtual Student? Student { get; set; } = null!;
-        public Guid ForeignLanguageLevelId { get; set; }
-        public virtual ForeignLanguageLevel? ForeignLanguageLevel { get; set; } = null!;
+        public virtual ICollection<StudentForeignLanguage> StudentForeignLanguages { get; set; } = null!;
+      
+        public ForeignLanguage()
+        {
+            
+        }
+
+        public ForeignLanguage(Guid id,string name, ICollection<StudentForeignLanguage> studentForeignLanguages):base(id)
+        {
+            Name = name;
+            StudentForeignLanguages = studentForeignLanguages;
+        }
     }
 }
