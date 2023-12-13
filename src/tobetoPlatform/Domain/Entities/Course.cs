@@ -18,5 +18,7 @@ public class Course: Entity<Guid>
     public virtual ICollection<CourseStudent> CourseStudents { get; set; } = null!;
     public virtual ICollection<CourseCategory> CourseCategories { get; set; } = null!;
     public virtual ICollection<CourseInstructor> CourseInstructors { get; set; } = null!;
+    public virtual ICollection<CourseModule> CourseModules { get; set; } = null!;
+    public virtual ICollection<Lesson> Lessons { get; set; } = null!;
 
 }
