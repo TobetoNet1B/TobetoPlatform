@@ -12,16 +12,14 @@ public class District:Entity<Guid>
     public Guid? CityId { get; set; }
     public virtual City City { get; set; }
     public virtual ICollection<Student> Students { get; set; }
+
     public District()
     {
         
     }
-
-    public District(Guid id,string name, Guid? cityId, City city, ICollection<Student> students) : base(id)
+    public District(Guid id,string name, Guid? cityId) : base(id)
     {
         Name = name;
         CityId = cityId;
-        City = city;
-        Students = students;
     }
 }

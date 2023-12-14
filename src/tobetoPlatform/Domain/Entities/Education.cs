@@ -11,12 +11,12 @@ public class Education: Entity<Guid>
     public bool IsContinueUniversity { get; set; }
     public Guid StudentId { get; set; }
     public virtual Student Student { get; set; } = null!;
+
     public Education()
     {
         
     }
-
-    public Education(Guid id,string university, string department, string graduation, DateTime startDate, DateTime endDate, bool isContinueUniversity, Guid studentId, Student student) : base(id)
+    public Education(Guid id,string university, string department, string graduation, DateTime startDate, DateTime endDate, bool isContinueUniversity, Guid studentId) : base(id)
     {
         University = university;
         Department = department;
@@ -25,6 +25,5 @@ public class Education: Entity<Guid>
         EndDate = endDate;
         IsContinueUniversity = isContinueUniversity;
         StudentId = studentId;
-        Student = student;
     }
 }

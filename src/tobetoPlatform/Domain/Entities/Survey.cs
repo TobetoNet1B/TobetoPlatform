@@ -8,17 +8,16 @@ public class Survey: Entity<Guid>
     public string SurveyUrl { get; set; }
     public Guid StudentId { get; set; }
     public virtual Student Student { get; set; } = null!;
+
     public Survey()
     {
         
     }
-
-    public Survey(Guid id,string? title, string? description, string surveyUrl, Guid studentId, Student student) : base(id)
+    public Survey(Guid id,string? title, string? description, string surveyUrl, Guid studentId) : base(id)
     {
         Title = title;
         Description = description;
         SurveyUrl = surveyUrl;
         StudentId = studentId;
-        Student = student;
     }
 }

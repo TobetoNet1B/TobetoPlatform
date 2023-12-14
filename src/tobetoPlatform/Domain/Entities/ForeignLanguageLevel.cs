@@ -5,14 +5,13 @@ public class ForeignLanguageLevel:Entity<Guid>
 {
     public string Name { get; set; }
     public virtual ICollection<StudentForeignLanguage> StudentForeignLanguages { get; set; } = null!;
+
     public ForeignLanguageLevel()
     {
         
     }
-
-    public ForeignLanguageLevel(Guid id,string name, ICollection<StudentForeignLanguage> studentForeignLanguages):base(id)
+    public ForeignLanguageLevel(Guid id, string name):base(id)
     {
         Name = name;
-        StudentForeignLanguages = studentForeignLanguages;
     }
 }

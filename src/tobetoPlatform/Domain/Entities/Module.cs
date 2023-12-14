@@ -19,12 +19,12 @@ public class Module:Entity<Guid>
     public virtual SoftwareLanguage SoftwareLanguage { get; set; }= null!;
     public virtual ICollection<CourseModule> CourseModules { get; set; } = null!;
     public virtual ICollection<StudentModule> StudentModules { get; set; } = null!;
+
     public Module()
     {
         
     }
-
-    public Module(Guid id,string name, string description, string imgUrl, Guid categoryId, Guid softwareLanguageId, Guid companyId, Category category, Company company, SoftwareLanguage softwareLanguage, ICollection<CourseModule> courseModules, ICollection<StudentModule> studentModules) : base(id)
+    public Module(Guid id,string name, string description, string imgUrl, Guid categoryId, Guid softwareLanguageId, Guid companyId) : base(id)
     {
         Name = name;
         Description = description;
@@ -32,10 +32,5 @@ public class Module:Entity<Guid>
         CategoryId = categoryId;
         SoftwareLanguageId = softwareLanguageId;
         CompanyId = companyId;
-        Category = category;
-        Company = company;
-        SoftwareLanguage = softwareLanguage;
-        CourseModules = courseModules;
-        StudentModules = studentModules;
     }
 }

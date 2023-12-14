@@ -11,11 +11,9 @@ namespace Domain.Entities
         {
             
         }
-
-        public ForeignLanguage(Guid id,string name, ICollection<StudentForeignLanguage> studentForeignLanguages):base(id)
+        public ForeignLanguage(Guid id, string name):base(id)
         {
             Name = name;
-            StudentForeignLanguages = studentForeignLanguages;
         }
     }
 }

@@ -14,18 +14,15 @@ public class StudentForeignLanguage:Entity<Guid>
     public virtual Student Student { get; set; } = null!;
     public virtual ForeignLanguage ForeignLanguage { get; set; } = null!;
     public virtual ForeignLanguageLevel ForeignLanguageLevel { get; set; } = null!;
+
     public StudentForeignLanguage()
     {
         
     }
-
-    public StudentForeignLanguage(Guid id,Guid studentId, Guid foreignLanguageId, Guid foreignLanguageLevelId, Student student, ForeignLanguage foreignLanguage, ForeignLanguageLevel foreignLanguageLevel):base(id)
+    public StudentForeignLanguage(Guid id,Guid studentId, Guid foreignLanguageId, Guid foreignLanguageLevelId):base(id)
     {
         StudentId = studentId;
         ForeignLanguageId = foreignLanguageId;
         ForeignLanguageLevelId = foreignLanguageLevelId;
-        Student = student;
-        ForeignLanguage = foreignLanguage;
-        ForeignLanguageLevel = foreignLanguageLevel;
     }
 }

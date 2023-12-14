@@ -15,11 +15,12 @@ public class Course: Entity<Guid>
     public virtual ICollection<CourseInstructor> CourseInstructors { get; set; } = null!;
     public virtual ICollection<CourseModule> CourseModules { get; set; } = null!;
     public virtual ICollection<Lesson> Lessons { get; set; } = null!;
+
     public Course()
     {
         
     }
-    public Course(Guid id,string name, string? courseTitle, string? description, int? courseLevel, DateTime startDate, DateTime endDate, int? estimatedTime, string activityStatus, ICollection<CourseCategory> courseCategories, ICollection<CourseInstructor> courseInstructors, ICollection<CourseModule> courseModules, ICollection<Lesson> lessons) : base(id)
+    public Course(Guid id,string name, string? courseTitle, string? description, int? courseLevel, DateTime startDate, DateTime endDate, int? estimatedTime, string activityStatus) : base(id)
     {
         Name = name;
         CourseTitle = courseTitle;
@@ -29,9 +30,5 @@ public class Course: Entity<Guid>
         EndDate = endDate;
         EstimatedTime = estimatedTime;
         ActivityStatus = activityStatus;
-        CourseCategories = courseCategories;
-        CourseInstructors = courseInstructors;
-        CourseModules = courseModules;
-        Lessons = lessons;
     }
 }

@@ -13,17 +13,15 @@ public class StudentModule:Entity<Guid>
     public int? TimeSpent { get; set; }
     public virtual Student Student { get; set; } = null!;
     public virtual Module Module { get; set; } = null!;
+
     public StudentModule()
     {
         
     }
-
-    public StudentModule(Guid id,Guid studentId, Guid moduleId, int? timeSpent, Student student, Module module) : base(id)
+    public StudentModule(Guid id,Guid studentId, Guid moduleId, int? timeSpent) : base(id)
     {
         StudentId = studentId;
         ModuleId = moduleId;
         TimeSpent = timeSpent;
-        Student = student;
-        Module = module;
     }
 }

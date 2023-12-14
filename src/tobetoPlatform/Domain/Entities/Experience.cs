@@ -13,12 +13,12 @@ public class Experience : Entity<Guid>
     public Guid StudentId { get; set; }
     public virtual Student Student { get; set; } = null!;
     public virtual City City { get; set; } = null!;
+
     public Experience()
     {
         
     }
-
-    public Experience(Guid id,string companyName, string position, string sector, Guid cityId, DateTime startDate, DateTime endDate, bool isContinueJob, Guid studentId, Student student, City city) : base(id)
+    public Experience(Guid id,string companyName, string position, string sector, Guid cityId, DateTime startDate, DateTime endDate, bool isContinueJob, Guid studentId) : base(id)
     {
         CompanyName = companyName;
         Position = position;
@@ -28,7 +28,5 @@ public class Experience : Entity<Guid>
         EndDate = endDate;
         IsContinueJob = isContinueJob;
         StudentId = studentId;
-        Student = student;
-        City = city;
     }
 }

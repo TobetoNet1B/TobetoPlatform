@@ -10,14 +10,13 @@ public class SoftwareLanguage:Entity<Guid>
 {
     public string Name { get; set; }
     public virtual ICollection<Module> Modules { get; set; } = null!;
+
     public SoftwareLanguage()
     {
         
     }
-
-    public SoftwareLanguage(Guid id,string name, ICollection<Module> modules) : base(id)
+    public SoftwareLanguage(Guid id,string name) : base(id)
     {
         Name = name;
-        Modules = modules;
     }
 }
