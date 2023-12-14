@@ -33,6 +33,8 @@ public class CreateCourseCommand : IRequest<CreatedCourseResponse>
 
         public async Task<CreatedCourseResponse> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
         {
+            await _courseBusinessRules.CourseNameCanNotBeDuplicationWhenInserted(request.Name);
+
             Course course = _mapper.Map<Course>(request);
 
             await _courseRepository.AddAsync(course);

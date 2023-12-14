@@ -2,6 +2,7 @@ using Application.Features.Abilities.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Exceptions.Types;
+using Core.Persistence.Paging;
 using Domain.Entities;
 
 namespace Application.Features.Abilities.Rules;
@@ -30,5 +31,12 @@ public class AbilityBusinessRules : BaseBusinessRules
             cancellationToken: cancellationToken
         );
         await AbilityShouldExistWhenSelected(ability);
+    }
+
+    public async Task AbilityNameCanNotBeDuplicationWhenInserted(string name)
+    {
+        IPaginate<Ability> result = await _abilityRepository.GetListAsync(c => c.Name == name);
+        if (result.Items.Any())
+            throw new Exception("Ability name exitst");
     }
 }

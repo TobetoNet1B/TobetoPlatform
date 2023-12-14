@@ -9,7 +9,7 @@ namespace Application.Features.Certificates.Commands.Create;
 public class CreateCertificateCommand : IRequest<CreatedCertificateResponse>
 {
     public string Name { get; set; }
-    public string FileType { get; set; }
+    public string? FileType { get; set; }
     public Guid StudentId { get; set; }
 
     public class CreateCertificateCommandHandler : IRequestHandler<CreateCertificateCommand, CreatedCertificateResponse>
@@ -28,6 +28,8 @@ public class CreateCertificateCommand : IRequest<CreatedCertificateResponse>
 
         public async Task<CreatedCertificateResponse> Handle(CreateCertificateCommand request, CancellationToken cancellationToken)
         {
+            await _certificateBusinessRules.FileTypeMustBePdf(request.Name);
+
             Certificate certificate = _mapper.Map<Certificate>(request);
 
             await _certificateRepository.AddAsync(certificate);

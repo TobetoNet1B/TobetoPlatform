@@ -31,4 +31,9 @@ public class CertificateBusinessRules : BaseBusinessRules
         );
         await CertificateShouldExistWhenSelected(certificate);
     }
+    public async Task FileTypeMustBePdf(string fileName)
+    {
+        if (!fileName.ToLower().EndsWith(".pdf"))
+            throw new Exception("Invalid file type. FileType must be '.pdf'.");
+    }
 }
