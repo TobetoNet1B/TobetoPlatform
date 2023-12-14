@@ -9,8 +9,9 @@ namespace Application.Features.Certificates.Commands.Update;
 public class UpdateCertificateCommand : IRequest<UpdatedCertificateResponse>
 {
     public Guid Id { get; set; }
-    public string Name { get; set; }
-    public string FileType { get; set; }
+    public string? Name { get; set; }
+    public string? FileType { get; set; }
+    public string? FileUrl { get; set; }
     public Guid StudentId { get; set; }
 
     public class UpdateCertificateCommandHandler : IRequestHandler<UpdateCertificateCommand, UpdatedCertificateResponse>

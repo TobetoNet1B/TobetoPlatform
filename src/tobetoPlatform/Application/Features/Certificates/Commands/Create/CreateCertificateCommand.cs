@@ -8,8 +8,9 @@ namespace Application.Features.Certificates.Commands.Create;
 
 public class CreateCertificateCommand : IRequest<CreatedCertificateResponse>
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public string? FileType { get; set; }
+    public string? FileUrl { get; set; }
     public Guid StudentId { get; set; }
 
     public class CreateCertificateCommandHandler : IRequestHandler<CreateCertificateCommand, CreatedCertificateResponse>

@@ -13,6 +13,7 @@ public class CertificateConfiguration : IEntityTypeConfiguration<Certificate>
         builder.Property(c => c.Id).HasColumnName("Id").IsRequired();
         builder.Property(c => c.Name).HasColumnName("Name");
         builder.Property(c => c.FileType).HasColumnName("FileType");
+        builder.Property(c => c.FileUrl).HasColumnName("FileUrl");
         builder.Property(c => c.StudentId).HasColumnName("StudentId");
         builder.Property(c => c.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
