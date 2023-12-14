@@ -15,27 +15,6 @@ using Core.Mailing.MailKitImplementations;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using Application.Services.Abilities;
-using Application.Services.Students;
-using Application.Services.Announcements;
-using Application.Services.Appeals;
-using Application.Services.Blogs;
-using Application.Services.Categories;
-using Application.Services.Certificates;
-using Application.Services.Courses;
-using Application.Services.Educations;
-using Application.Services.Exams;
-using Application.Services.Experiences;
-using Application.Services.ForeignLanguages;
-using Application.Services.ForeignLanguageLevels;
-using Application.Services.Instructors;
-using Application.Services.SocialMedias;
-using Application.Services.Surveys;
-using Application.Services.Tags;
-using Application.Services.CourseCategories;
-using Application.Services.CourseInstructors;
-using Application.Services.CourseStudents;
-using Application.Services.StudentExams;
 
 namespace Application;
 public static class ApplicationServiceRegistration
@@ -65,27 +44,6 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAuthenticatorService, AuthenticatorManager>();
         services.AddScoped<IUserService, UserManager>();
 
-        services.AddScoped<IAbilitiesService, AbilitiesManager>();
-        services.AddScoped<IStudentsService, StudentsManager>();
-        services.AddScoped<IAnnouncementsService, AnnouncementsManager>();
-        services.AddScoped<IAppealsService, AppealsManager>();
-        services.AddScoped<IBlogsService, BlogsManager>();
-        services.AddScoped<ICategoriesService, CategoriesManager>();
-        services.AddScoped<ICertificatesService, CertificatesManager>();
-        services.AddScoped<ICoursesService, CoursesManager>();
-        services.AddScoped<IEducationsService, EducationsManager>();
-        services.AddScoped<IExamsService, ExamsManager>();
-        services.AddScoped<IExperiencesService, ExperiencesManager>();
-        services.AddScoped<IForeignLanguagesService, ForeignLanguagesManager>();
-        services.AddScoped<IForeignLanguageLevelsService, ForeignLanguageLevelsManager>();
-        services.AddScoped<IInstructorsService, InstructorsManager>();
-        services.AddScoped<ISocialMediasService, SocialMediasManager>();
-        services.AddScoped<ISurveysService, SurveysManager>();
-        services.AddScoped<ITagsService, TagsManager>();
-        services.AddScoped<ICourseCategoriesService, CourseCategoriesManager>();
-        services.AddScoped<ICourseInstructorsService, CourseInstructorsManager>();
-        services.AddScoped<ICourseStudentsService, CourseStudentsManager>();
-        services.AddScoped<IStudentExamsService, StudentExamsManager>();
         return services;
     }
 
