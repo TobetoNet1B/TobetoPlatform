@@ -16,6 +16,10 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
         builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Countries_Name").IsUnique();
+        builder.HasMany(b => b.Students);
+        builder.HasMany(b => b.Cities);
+
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
     }
 }

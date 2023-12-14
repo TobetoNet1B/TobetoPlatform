@@ -18,6 +18,9 @@ public class StudentAppealConfiguration : IEntityTypeConfiguration<StudentAppeal
         builder.Property(sa => sa.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(sa => sa.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(b => b.Student);
+        builder.HasOne(b => b.Appeal);
+
         builder.HasQueryFilter(sa => !sa.DeletedDate.HasValue);
     }
 }

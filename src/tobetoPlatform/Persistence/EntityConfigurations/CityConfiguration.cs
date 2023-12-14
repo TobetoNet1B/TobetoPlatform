@@ -17,6 +17,12 @@ public class CityConfiguration : IEntityTypeConfiguration<City>
         builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Cities_Name").IsUnique();
+        builder.HasOne(b => b.Country);
+        builder.HasMany(b => b.Districts);
+        builder.HasMany(b => b.Experiences);
+        builder.HasMany(b => b.Students);
+
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
     }
 }

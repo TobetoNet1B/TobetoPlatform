@@ -17,6 +17,11 @@ public class DistrictConfiguration : IEntityTypeConfiguration<District>
         builder.Property(d => d.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(d => d.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Districts_Name").IsUnique();
+        builder.HasOne(b => b.City);
+        builder.HasMany(b => b.Students);
+
+
         builder.HasQueryFilter(d => !d.DeletedDate.HasValue);
     }
 }

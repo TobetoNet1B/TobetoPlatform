@@ -22,6 +22,9 @@ public class StudentExamConfiguration : IEntityTypeConfiguration<StudentExam>
         builder.Property(se => se.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(se => se.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(b => b.Student);
+        builder.HasOne(b => b.Exam);
+
         builder.HasQueryFilter(se => !se.DeletedDate.HasValue);
     }
 }

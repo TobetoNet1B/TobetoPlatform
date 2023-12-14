@@ -20,6 +20,11 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.Property(a => a.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(a => a.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(b => b.Student);
+        builder.HasOne(b => b.Country);
+        builder.HasOne(b => b.City);
+        builder.HasOne(b => b.District);
+
         builder.HasQueryFilter(a => !a.DeletedDate.HasValue);
     }
 }

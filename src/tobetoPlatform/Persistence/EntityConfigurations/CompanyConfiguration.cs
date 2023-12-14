@@ -16,6 +16,9 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
         builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Companies_Name").IsUnique();
+        builder.HasMany(b => b.Modules);
+
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
     }
 }

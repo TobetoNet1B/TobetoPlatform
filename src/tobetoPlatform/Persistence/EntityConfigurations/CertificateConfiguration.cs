@@ -18,6 +18,9 @@ public class CertificateConfiguration : IEntityTypeConfiguration<Certificate>
         builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Certificates_Name").IsUnique();
+        builder.HasOne(b => b.Student);
+
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
     }
 }

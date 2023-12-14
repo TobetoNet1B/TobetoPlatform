@@ -18,6 +18,9 @@ public class StudentModuleConfiguration : IEntityTypeConfiguration<StudentModule
         builder.Property(sm => sm.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(sm => sm.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(b => b.Student);
+        builder.HasOne(b => b.Module);
+
         builder.HasQueryFilter(sm => !sm.DeletedDate.HasValue);
     }
 }

@@ -23,6 +23,9 @@ public class ExperienceConfiguration : IEntityTypeConfiguration<Experience>
         builder.Property(e => e.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(e => e.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(b => b.Student);
+        builder.HasOne(b => b.City);
+
         builder.HasQueryFilter(e => !e.DeletedDate.HasValue);
     }
 }

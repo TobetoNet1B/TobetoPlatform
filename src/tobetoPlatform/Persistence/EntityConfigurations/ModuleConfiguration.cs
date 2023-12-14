@@ -21,6 +21,13 @@ public class ModuleConfiguration : IEntityTypeConfiguration<Module>
         builder.Property(m => m.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(m => m.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Modules_Name").IsUnique();
+        builder.HasOne(b => b.Category);
+        builder.HasOne(b => b.Company);
+        builder.HasOne(b => b.SoftwareLanguage);
+        builder.HasMany(b => b.CourseModules);
+        builder.HasMany(b => b.StudentModules);
+
         builder.HasQueryFilter(m => !m.DeletedDate.HasValue);
     }
 }

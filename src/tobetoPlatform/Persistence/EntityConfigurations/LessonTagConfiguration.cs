@@ -17,6 +17,9 @@ public class LessonTagConfiguration : IEntityTypeConfiguration<LessonTag>
         builder.Property(lt => lt.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(lt => lt.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(b => b.Lesson);
+        builder.HasOne(b => b.Tag);
+
         builder.HasQueryFilter(lt => !lt.DeletedDate.HasValue);
     }
 }
