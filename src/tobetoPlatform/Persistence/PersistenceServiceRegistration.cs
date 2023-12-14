@@ -19,6 +19,38 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
 
+        services.AddScoped<IAbilityRepository, AbilityRepository>();
+        services.AddScoped<IAddressRepository, AddressRepository>();
+        services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
+        services.AddScoped<IAppealRepository, AppealRepository>();
+        services.AddScoped<IBlogRepository, BlogRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<ICertificateRepository, CertificateRepository>();
+        services.AddScoped<ICityRepository, CityRepository>();
+        services.AddScoped<ICompanyRepository, CompanyRepository>();
+        services.AddScoped<ICountryRepository, CountryRepository>();
+        services.AddScoped<ICourseRepository, CourseRepository>();
+        services.AddScoped<ICourseCategoryRepository, CourseCategoryRepository>();
+        services.AddScoped<ICourseInstructorRepository, CourseInstructorRepository>();
+        services.AddScoped<ICourseModuleRepository, CourseModuleRepository>();
+        services.AddScoped<IDistrictRepository, DistrictRepository>();
+        services.AddScoped<IEducationRepository, EducationRepository>();
+        services.AddScoped<IExamRepository, ExamRepository>();
+        services.AddScoped<IExperienceRepository, ExperienceRepository>();
+        services.AddScoped<IForeignLanguageRepository, ForeignLanguageRepository>();
+        services.AddScoped<IForeignLanguageLevelRepository, ForeignLanguageLevelRepository>();
+        services.AddScoped<IInstructorRepository, InstructorRepository>();
+        services.AddScoped<ILessonRepository, LessonRepository>();
+        services.AddScoped<ILessonTagRepository, LessonTagRepository>();
+        services.AddScoped<IModuleRepository, ModuleRepository>();
+        services.AddScoped<ISocialMediaRepository, SocialMediaRepository>();
+        services.AddScoped<ISoftwareLanguageRepository, SoftwareLanguageRepository>();
+        services.AddScoped<IStudentRepository, StudentRepository>();
+        services.AddScoped<IStudentAppealRepository, StudentAppealRepository>();
+        services.AddScoped<IStudentExamRepository, StudentExamRepository>();
+        services.AddScoped<IStudentModuleRepository, StudentModuleRepository>();
+        services.AddScoped<ISurveyRepository, SurveyRepository>();
+        services.AddScoped<ITagRepository, TagRepository>();
         return services;
     }
 }
