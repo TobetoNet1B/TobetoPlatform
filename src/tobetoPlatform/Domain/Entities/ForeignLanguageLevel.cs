@@ -4,7 +4,7 @@ namespace Domain.Entities;
 public class ForeignLanguageLevel:Entity<Guid>
 {
     public string Name { get; set; }
-    public virtual ICollection<StudentForeignLanguage> StudentForeignLanguages { get; set; } = null!;
+    public virtual ForeignLanguage ForeignLanguage { get; set; } = null!;
 
     public ForeignLanguageLevel()
     {

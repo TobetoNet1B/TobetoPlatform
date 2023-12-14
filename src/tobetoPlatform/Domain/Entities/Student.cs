@@ -17,7 +17,7 @@ public class Student : Entity<Guid>
     public virtual ICollection<Survey> Surveys { get; set; } = null!;
     public virtual ICollection<Certificate> Certificates { get; set; } = null!;
     public virtual ICollection<SocialMedia> SocialMedias { get; set; } = null!;
-    public virtual ICollection<StudentForeignLanguage> StudentForeignLanguages { get; set; } = null!;
+    public virtual ICollection<ForeignLanguage> ForeignLanguages { get; set; } = null!;
     public virtual ICollection<Education> Educations { get; set; } = null!;
     public virtual ICollection<StudentExam> StudentExams { get; set; } = null!;
     public virtual ICollection<Experience> Experiences { get; set; } = null!;
