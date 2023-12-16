@@ -11,7 +11,6 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.ToTable("Students").HasKey(s => s.Id);
 
         builder.Property(s => s.Id).HasColumnName("Id").IsRequired();
-        builder.Property(s => s.UserId).HasColumnName("UserId");
         builder.Property(s => s.IdentityNumber).HasColumnName("IdentityNumber");
         builder.Property(s => s.BirthDate).HasColumnName("BirthDate");
         builder.Property(s => s.PhoneNumber).HasColumnName("PhoneNumber");
@@ -20,7 +19,6 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.Property(s => s.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(s => s.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(s => s.DeletedDate).HasColumnName("DeletedDate");
-
         builder.HasIndex(indexExpression: b => b.IdentityNumber, name: "UK_Students_Name").IsUnique();
         builder.HasOne(b => b.User);
         builder.HasOne(b => b.Address);
@@ -29,12 +27,11 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.HasMany(b => b.Surveys);
         builder.HasMany(b => b.Certificates);
         builder.HasMany(b => b.SocialMedias);
-        builder.HasMany(b => b.ForeignLanguages);
+        builder.HasMany(b => b.StudentForeignLanguages);
         builder.HasMany(b => b.Educations);
         builder.HasMany(b => b.StudentExams);
         builder.HasMany(b => b.Experiences);
         builder.HasMany(b => b.StudentModules);
-
         builder.HasQueryFilter(s => !s.DeletedDate.HasValue);
     }
 }

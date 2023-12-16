@@ -33,20 +33,21 @@ public class BaseDbContext : DbContext
     public DbSet<Education> Educations { get; set; }
     public DbSet<Exam> Exams { get; set; }
     public DbSet<Experience> Experiences { get; set; }
-    public DbSet<ForeignLanguage> ForeignLanguages { get; set; }
-    public DbSet<ForeignLanguageLevel> ForeignLanguageLevels { get; set; }
     public DbSet<Instructor> Instructors { get; set; }
     public DbSet<Lesson> Lessons { get; set; }
     public DbSet<LessonTag> LessonTags { get; set; }
     public DbSet<Domain.Entities.Module> Modules { get; set; }
     public DbSet<SocialMedia> SocialMedias { get; set; }
     public DbSet<SoftwareLanguage> SoftwareLanguages { get; set; }
-    public DbSet<Student> Students { get; set; }
     public DbSet<StudentAppeal> StudentAppeals { get; set; }
     public DbSet<StudentExam> StudentExams { get; set; }
     public DbSet<StudentModule> StudentModules { get; set; }
     public DbSet<Survey> Surveys { get; set; }
     public DbSet<Tag> Tags { get; set; }
+    public DbSet<StudentForeignLanguage> StudentForeignLanguages { get; set; }
+    public DbSet<ForeignLanguage> ForeignLanguages { get; set; }
+    public DbSet<ForeignLanguageLevel> ForeignLanguageLevels { get; set; }
+    public DbSet<Student> Students { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

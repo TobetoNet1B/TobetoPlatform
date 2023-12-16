@@ -8,7 +8,6 @@ namespace Application.Features.Students.Commands.Create;
 
 public class CreateStudentCommand : IRequest<CreatedStudentResponse>
 {
-    public int UserId { get; set; }
     public string? IdentityNumber { get; set; }
     public DateTime? BirthDate { get; set; }
     public string? PhoneNumber { get; set; }

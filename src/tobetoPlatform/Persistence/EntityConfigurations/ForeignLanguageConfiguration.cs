@@ -12,15 +12,9 @@ public class ForeignLanguageConfiguration : IEntityTypeConfiguration<ForeignLang
 
         builder.Property(fl => fl.Id).HasColumnName("Id").IsRequired();
         builder.Property(fl => fl.Name).HasColumnName("Name");
-        builder.Property(fl => fl.ForeignLanguageLevelId).HasColumnName("ForeignLanguageLevelId");
-        builder.Property(fl => fl.StudentId).HasColumnName("StudentId");
         builder.Property(fl => fl.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(fl => fl.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(fl => fl.DeletedDate).HasColumnName("DeletedDate");
-
-        builder.HasIndex(indexExpression: b => b.Name, name: "UK_ForeignLanguage_Name").IsUnique();
-        builder.HasOne(b => b.ForeignLanguageLevel);
-        builder.HasOne(b => b.Student);
 
         builder.HasQueryFilter(fl => !fl.DeletedDate.HasValue);
     }

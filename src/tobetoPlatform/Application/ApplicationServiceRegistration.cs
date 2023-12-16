@@ -35,18 +35,20 @@ using Application.Services.Exams;
 using Application.Services.Experiences;
 using Application.Services.ForeignLanguages;
 using Application.Services.ForeignLanguageLevels;
+using Application.Services.Students;
+
 using Application.Services.Instructors;
 using Application.Services.Lessons;
 using Application.Services.LessonTags;
 using Application.Services.Modules;
 using Application.Services.SocialMedias;
 using Application.Services.SoftwareLanguages;
-using Application.Services.Students;
 using Application.Services.StudentAppeals;
 using Application.Services.StudentExams;
 using Application.Services.StudentModules;
 using Application.Services.Surveys;
 using Application.Services.Tags;
+using Application.Services.StudentForeignLanguages;
 
 namespace Application;
 public static class ApplicationServiceRegistration
@@ -94,20 +96,21 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IEducationsService, EducationsManager>();
         services.AddScoped<IExamsService, ExamsManager>();
         services.AddScoped<IExperiencesService, ExperiencesManager>();
-        services.AddScoped<IForeignLanguagesService, ForeignLanguagesManager>();
-        services.AddScoped<IForeignLanguageLevelsService, ForeignLanguageLevelsManager>();
         services.AddScoped<IInstructorsService, InstructorsManager>();
         services.AddScoped<ILessonsService, LessonsManager>();
         services.AddScoped<ILessonTagsService, LessonTagsManager>();
         services.AddScoped<IModulesService, ModulesManager>();
         services.AddScoped<ISocialMediasService, SocialMediasManager>();
         services.AddScoped<ISoftwareLanguagesService, SoftwareLanguagesManager>();
-        services.AddScoped<IStudentsService, StudentsManager>();
         services.AddScoped<IStudentAppealsService, StudentAppealsManager>();
         services.AddScoped<IStudentExamsService, StudentExamsManager>();
         services.AddScoped<IStudentModulesService, StudentModulesManager>();
         services.AddScoped<ISurveysService, SurveysManager>();
         services.AddScoped<ITagsService, TagsManager>();
+        services.AddScoped<IStudentForeignLanguagesService, StudentForeignLanguagesManager>();
+        services.AddScoped<IForeignLanguagesService, ForeignLanguagesManager>();
+        services.AddScoped<IForeignLanguageLevelsService, ForeignLanguageLevelsManager>();
+        services.AddScoped<IStudentsService, StudentsManager>();
         return services;
     }
 

@@ -37,20 +37,21 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IEducationRepository, EducationRepository>();
         services.AddScoped<IExamRepository, ExamRepository>();
         services.AddScoped<IExperienceRepository, ExperienceRepository>();
-        services.AddScoped<IForeignLanguageRepository, ForeignLanguageRepository>();
-        services.AddScoped<IForeignLanguageLevelRepository, ForeignLanguageLevelRepository>();
         services.AddScoped<IInstructorRepository, InstructorRepository>();
         services.AddScoped<ILessonRepository, LessonRepository>();
         services.AddScoped<ILessonTagRepository, LessonTagRepository>();
         services.AddScoped<IModuleRepository, ModuleRepository>();
         services.AddScoped<ISocialMediaRepository, SocialMediaRepository>();
         services.AddScoped<ISoftwareLanguageRepository, SoftwareLanguageRepository>();
-        services.AddScoped<IStudentRepository, StudentRepository>();
         services.AddScoped<IStudentAppealRepository, StudentAppealRepository>();
         services.AddScoped<IStudentExamRepository, StudentExamRepository>();
         services.AddScoped<IStudentModuleRepository, StudentModuleRepository>();
         services.AddScoped<ISurveyRepository, SurveyRepository>();
         services.AddScoped<ITagRepository, TagRepository>();
+        services.AddScoped<IStudentForeignLanguageRepository, StudentForeignLanguageRepository>();
+        services.AddScoped<IForeignLanguageRepository, ForeignLanguageRepository>();
+        services.AddScoped<IForeignLanguageLevelRepository, ForeignLanguageLevelRepository>();
+        services.AddScoped<IStudentRepository, StudentRepository>();
         return services;
     }
 }

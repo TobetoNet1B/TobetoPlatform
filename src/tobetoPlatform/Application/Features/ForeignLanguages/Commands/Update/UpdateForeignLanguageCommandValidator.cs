@@ -8,7 +8,5 @@ public class UpdateForeignLanguageCommandValidator : AbstractValidator<UpdateFor
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.Name).NotEmpty();
-        RuleFor(c => c.ForeignLanguageLevelId).NotEmpty();
-        RuleFor(c => c.StudentId).NotEmpty();
     }
 }

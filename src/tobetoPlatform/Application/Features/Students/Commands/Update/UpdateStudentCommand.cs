@@ -9,7 +9,6 @@ namespace Application.Features.Students.Commands.Update;
 public class UpdateStudentCommand : IRequest<UpdatedStudentResponse>
 {
     public Guid Id { get; set; }
-    public int UserId { get; set; }
     public string? IdentityNumber { get; set; }
     public DateTime? BirthDate { get; set; }
     public string? PhoneNumber { get; set; }

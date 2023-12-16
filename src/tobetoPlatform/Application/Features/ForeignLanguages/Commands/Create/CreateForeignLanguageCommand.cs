@@ -9,8 +9,6 @@ namespace Application.Features.ForeignLanguages.Commands.Create;
 public class CreateForeignLanguageCommand : IRequest<CreatedForeignLanguageResponse>
 {
     public string Name { get; set; }
-    public Guid ForeignLanguageLevelId { get; set; }
-    public Guid StudentId { get; set; }
 
     public class CreateForeignLanguageCommandHandler : IRequestHandler<CreateForeignLanguageCommand, CreatedForeignLanguageResponse>
     {

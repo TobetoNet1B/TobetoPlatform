@@ -4,7 +4,6 @@ using Core.Security.Entities;
 namespace Domain.Entities;
 public class Student : Entity<Guid>
 {
-    public int UserId { get; set; }
     public string? IdentityNumber { get; set; }
     public DateTime? BirthDate { get; set;}
     public string? PhoneNumber { get; set;}
@@ -17,7 +16,7 @@ public class Student : Entity<Guid>
     public virtual ICollection<Survey> Surveys { get; set; } = null!;
     public virtual ICollection<Certificate> Certificates { get; set; } = null!;
     public virtual ICollection<SocialMedia> SocialMedias { get; set; } = null!;
-    public virtual ICollection<ForeignLanguage> ForeignLanguages { get; set; } = null!;
+    public virtual ICollection<StudentForeignLanguage> StudentForeignLanguages { get; set; } = null!;
     public virtual ICollection<Education> Educations { get; set; } = null!;
     public virtual ICollection<StudentExam> StudentExams { get; set; } = null!;
     public virtual ICollection<Experience> Experiences { get; set; } = null!;
@@ -27,9 +26,8 @@ public class Student : Entity<Guid>
     {
         
     }
-    public Student(Guid id, int userId, string? identityNumber, DateTime? birthDate, string? phoneNumber, string? about, string? imgUrl) : base(id)
+    public Student(Guid id, string? identityNumber, DateTime? birthDate, string? phoneNumber, string? about, string? imgUrl) : base(id)
     {
-        UserId = userId;
         IdentityNumber = identityNumber;
         BirthDate = birthDate;
         PhoneNumber = phoneNumber;
