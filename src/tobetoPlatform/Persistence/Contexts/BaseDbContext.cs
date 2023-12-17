@@ -48,6 +48,8 @@ public class BaseDbContext : DbContext
     public DbSet<ForeignLanguageLevel> ForeignLanguageLevels { get; set; }
     public DbSet<Student> Students { get; set; }
     public DbSet<ModuleSet> ModuleSets { get; set; }
+    public DbSet<Classroom> Classrooms { get; set; }
+    public DbSet<StudentClassroom> StudentClassrooms { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

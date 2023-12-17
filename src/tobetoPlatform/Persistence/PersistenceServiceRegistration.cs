@@ -52,6 +52,8 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IForeignLanguageLevelRepository, ForeignLanguageLevelRepository>();
         services.AddScoped<IStudentRepository, StudentRepository>();
         services.AddScoped<IModuleSetRepository, ModuleSetRepository>();
+        services.AddScoped<IClassroomRepository, ClassroomRepository>();
+        services.AddScoped<IStudentClassroomRepository, StudentClassroomRepository>();
         return services;
     }
 }

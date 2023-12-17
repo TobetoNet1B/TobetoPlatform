@@ -314,6 +314,22 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSets.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSets.Delete" });
         #endregion
+        #region Classrooms
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Classrooms.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Classrooms.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Classrooms.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Classrooms.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Classrooms.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Classrooms.Delete" });
+        #endregion
+        #region StudentClassrooms
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentClassrooms.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentClassrooms.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentClassrooms.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentClassrooms.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentClassrooms.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentClassrooms.Delete" });
+        #endregion
         return seeds;
     }
 }

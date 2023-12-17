@@ -37,6 +37,8 @@ using Application.Services.ForeignLanguages;
 using Application.Services.ForeignLanguageLevels;
 using Application.Services.Students;
 using Application.Services.ModuleSets;
+using Application.Services.Classrooms;
+using Application.Services.StudentClassrooms;
 
 using Application.Services.Instructors;
 using Application.Services.Lessons;
@@ -111,6 +113,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IForeignLanguageLevelsService, ForeignLanguageLevelsManager>();
         services.AddScoped<IStudentsService, StudentsManager>();
         services.AddScoped<IModuleSetsService, ModuleSetsManager>();
+        services.AddScoped<IClassroomsService, ClassroomsManager>();
+        services.AddScoped<IStudentClassroomsService, StudentClassroomsManager>();
         return services;
     }
 

@@ -19,7 +19,7 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.Property(s => s.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(s => s.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(s => s.DeletedDate).HasColumnName("DeletedDate");
-        builder.HasIndex(indexExpression: b => b.IdentityNumber, name: "UK_Students_Name").IsUnique();
+
         builder.HasOne(b => b.Address);
         builder.HasMany(b => b.Abilities);
         builder.HasMany(b => b.StudentAppeals);
@@ -31,6 +31,8 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.HasMany(b => b.StudentExams);
         builder.HasMany(b => b.Experiences);
         builder.HasMany(b => b.StudentModules);
+        builder.HasMany(b => b.StudentClassrooms);
+
         builder.HasQueryFilter(s => !s.DeletedDate.HasValue);
     }
 }

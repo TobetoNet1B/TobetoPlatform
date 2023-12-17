@@ -3,7 +3,6 @@ using Application.Features.Students.Commands.Delete;
 using Application.Features.Students.Commands.Update;
 using Application.Features.Students.Queries.GetById;
 using Application.Features.Students.Queries.GetList;
-using Application.Features.Users.Commands.Create;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
