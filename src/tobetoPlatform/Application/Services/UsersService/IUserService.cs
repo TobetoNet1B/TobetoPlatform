@@ -26,7 +26,7 @@ public interface IUserService
         CancellationToken cancellationToken = default
     );
 
-    Task<User> AddAsync(User user);
+    Task<User> AddAsync(UserAddDto userAddDto);
     Task<User> UpdateAsync(User user);
     Task<User> DeleteAsync(User user, bool permanent = false);
 }

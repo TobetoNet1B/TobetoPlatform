@@ -2,6 +2,7 @@
 using Application.Services.Repositories;
 using Core.Persistence.Paging;
 using Core.Security.Entities;
+using Core.Security.Hashing;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
@@ -54,11 +55,19 @@ public class UserManager : IUserService
         return userList;
     }
 
-    public async Task<User> AddAsync(User user)
+    public async Task<User> AddAsync(UserAddDto userAddDto)
     {
-        await _userBusinessRules.UserEmailShouldNotExistsWhenInsert(user.Email);
+        await _userBusinessRules.UserEmailShouldNotExistsWhenInsert(userAddDto.Email);
 
-        User addedUser = await _userRepository.AddAsync(user);
+        HashingHelper.CreatePasswordHash(
+                userAddDto.Password,
+                passwordHash: out byte[] passwordHash,
+                passwordSalt: out byte[] passwordSalt
+            );
+        userAddDto.PasswordHash = passwordHash;
+        userAddDto.PasswordSalt = passwordSalt;
+
+        User addedUser = await _userRepository.AddAsync(userAddDto);
 
         return addedUser;
     }
