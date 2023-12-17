@@ -17,9 +17,12 @@ public class StudentForeignLanguageConfiguration : IEntityTypeConfiguration<Stud
         builder.Property(sfl => sfl.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(sfl => sfl.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(sfl => sfl.DeletedDate).HasColumnName("DeletedDate");
+
         builder.HasOne(b => b.Student);
         builder.HasOne(b => b.ForeignLanguage);
         builder.HasOne(b => b.ForeignLanguageLevel);
+
+
         builder.HasQueryFilter(sfl => !sfl.DeletedDate.HasValue);
     }
 }

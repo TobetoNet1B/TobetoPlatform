@@ -9,7 +9,7 @@ namespace Application.Features.StudentModules.Commands.Create;
 public class CreateStudentModuleCommand : IRequest<CreatedStudentModuleResponse>
 {
     public Guid StudentId { get; set; }
-    public Guid ModuleId { get; set; }
+    public Guid ModuleSetId { get; set; }
     public int? TimeSpent { get; set; }
 
     public class CreateStudentModuleCommandHandler : IRequestHandler<CreateStudentModuleCommand, CreatedStudentModuleResponse>

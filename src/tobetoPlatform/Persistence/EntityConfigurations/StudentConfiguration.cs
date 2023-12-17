@@ -31,7 +31,6 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.HasMany(b => b.StudentExams);
         builder.HasMany(b => b.Experiences);
         builder.HasMany(b => b.StudentModules);
-        builder.HasMany(b => b.StudentClassrooms);
 
         builder.HasQueryFilter(s => !s.DeletedDate.HasValue);
     }

@@ -17,7 +17,8 @@ public class SoftwareLanguageConfiguration : IEntityTypeConfiguration<SoftwareLa
         builder.Property(sl => sl.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasIndex(indexExpression: b => b.Name, name: "UK_SoftwareLanguages_Name").IsUnique();
-        builder.HasMany(b => b.Modules);
+        builder.HasMany(b => b.ModuleSets);
+
 
         builder.HasQueryFilter(sl => !sl.DeletedDate.HasValue);
     }

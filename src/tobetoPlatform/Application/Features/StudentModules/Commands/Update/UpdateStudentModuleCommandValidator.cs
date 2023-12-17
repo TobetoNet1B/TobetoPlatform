@@ -8,7 +8,7 @@ public class UpdateStudentModuleCommandValidator : AbstractValidator<UpdateStude
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.StudentId).NotEmpty();
-        RuleFor(c => c.ModuleId).NotEmpty();
+        RuleFor(c => c.ModuleSetId).NotEmpty();
         RuleFor(c => c.TimeSpent).NotEmpty();
     }
 }

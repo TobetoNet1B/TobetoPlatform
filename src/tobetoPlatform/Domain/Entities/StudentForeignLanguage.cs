@@ -6,9 +6,9 @@ public class StudentForeignLanguage:Entity<Guid>
     public  Guid StudentId { get; set; }
     public  Guid ForeignLanguageId { get; set; }
     public  Guid ForeignLanguageLevelId { get; set; }
-    public virtual Student Student { get; set; }
-    public virtual ForeignLanguage ForeignLanguage { get; set; }
-    public virtual ForeignLanguageLevel ForeignLanguageLevel { get; set; }
+    public virtual Student Student { get; set; } = null!;
+    public virtual ForeignLanguage ForeignLanguage { get; set; } = null!;
+    public virtual ForeignLanguageLevel ForeignLanguageLevel { get; set; } = null!;
     public StudentForeignLanguage()
     {
         

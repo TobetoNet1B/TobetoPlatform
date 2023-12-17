@@ -7,7 +7,7 @@ public class CreateStudentModuleCommandValidator : AbstractValidator<CreateStude
     public CreateStudentModuleCommandValidator()
     {
         RuleFor(c => c.StudentId).NotEmpty();
-        RuleFor(c => c.ModuleId).NotEmpty();
+        RuleFor(c => c.ModuleSetId).NotEmpty();
         RuleFor(c => c.TimeSpent).NotEmpty();
     }
 }

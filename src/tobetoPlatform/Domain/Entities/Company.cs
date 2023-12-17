@@ -9,7 +9,7 @@ namespace Domain.Entities;
 public class Company:Entity<Guid>
 {
     public string Name { get; set; }
-    public virtual ICollection<ModuleSet> Modules { get; set; } = null!;
+    public virtual ICollection<ModuleSet> ModuleSets { get; set; } = null!;
 
     public Company()
     {

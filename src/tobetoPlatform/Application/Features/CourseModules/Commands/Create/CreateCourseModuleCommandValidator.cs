@@ -7,6 +7,6 @@ public class CreateCourseModuleCommandValidator : AbstractValidator<CreateCourse
     public CreateCourseModuleCommandValidator()
     {
         RuleFor(c => c.CourseId).NotEmpty();
-        RuleFor(c => c.ModuleId).NotEmpty();
+        RuleFor(c => c.ModuleSetId).NotEmpty();
     }
 }

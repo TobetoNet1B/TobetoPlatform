@@ -10,7 +10,7 @@ public class UpdateStudentModuleCommand : IRequest<UpdatedStudentModuleResponse>
 {
     public Guid Id { get; set; }
     public Guid StudentId { get; set; }
-    public Guid ModuleId { get; set; }
+    public Guid ModuleSetId { get; set; }
     public int? TimeSpent { get; set; }
 
     public class UpdateStudentModuleCommandHandler : IRequestHandler<UpdateStudentModuleCommand, UpdatedStudentModuleResponse>

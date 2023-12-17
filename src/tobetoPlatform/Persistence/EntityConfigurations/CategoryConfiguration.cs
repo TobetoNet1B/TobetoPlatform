@@ -21,7 +21,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 
         builder.HasIndex(indexExpression: b => b.Name, name: "UK_Categories_Name").IsUnique();
         builder.HasMany(b => b.CourseCategories);
-        builder.HasMany(b => b.Modules);
+        builder.HasMany(b => b.ModuleSets);
 
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
     }
