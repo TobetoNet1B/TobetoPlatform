@@ -305,7 +305,15 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "StudentForeignLanguages.Add" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "StudentForeignLanguages.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "StudentForeignLanguages.Delete" });
-        return seeds;
         #endregion
+        #region ModuleSets
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSets.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSets.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSets.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSets.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSets.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSets.Delete" });
+        #endregion
+        return seeds;
     }
 }

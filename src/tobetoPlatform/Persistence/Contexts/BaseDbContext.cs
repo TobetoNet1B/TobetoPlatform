@@ -36,7 +36,6 @@ public class BaseDbContext : DbContext
     public DbSet<Instructor> Instructors { get; set; }
     public DbSet<Lesson> Lessons { get; set; }
     public DbSet<LessonTag> LessonTags { get; set; }
-    public DbSet<Domain.Entities.Module> Modules { get; set; }
     public DbSet<SocialMedia> SocialMedias { get; set; }
     public DbSet<SoftwareLanguage> SoftwareLanguages { get; set; }
     public DbSet<StudentAppeal> StudentAppeals { get; set; }
@@ -48,6 +47,7 @@ public class BaseDbContext : DbContext
     public DbSet<ForeignLanguage> ForeignLanguages { get; set; }
     public DbSet<ForeignLanguageLevel> ForeignLanguageLevels { get; set; }
     public DbSet<Student> Students { get; set; }
+    public DbSet<ModuleSet> ModuleSets { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

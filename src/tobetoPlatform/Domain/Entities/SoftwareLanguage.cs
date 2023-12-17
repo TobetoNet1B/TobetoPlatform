@@ -9,7 +9,7 @@ namespace Domain.Entities;
 public class SoftwareLanguage:Entity<Guid>
 {
     public string Name { get; set; }
-    public virtual ICollection<Module> Modules { get; set; } = null!;
+    public virtual ICollection<ModuleSet> Modules { get; set; } = null!;
 
     public SoftwareLanguage()
     {

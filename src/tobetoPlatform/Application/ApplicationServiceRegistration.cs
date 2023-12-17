@@ -36,11 +36,11 @@ using Application.Services.Experiences;
 using Application.Services.ForeignLanguages;
 using Application.Services.ForeignLanguageLevels;
 using Application.Services.Students;
+using Application.Services.ModuleSets;
 
 using Application.Services.Instructors;
 using Application.Services.Lessons;
 using Application.Services.LessonTags;
-using Application.Services.Modules;
 using Application.Services.SocialMedias;
 using Application.Services.SoftwareLanguages;
 using Application.Services.StudentAppeals;
@@ -99,7 +99,6 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IInstructorsService, InstructorsManager>();
         services.AddScoped<ILessonsService, LessonsManager>();
         services.AddScoped<ILessonTagsService, LessonTagsManager>();
-        services.AddScoped<IModulesService, ModulesManager>();
         services.AddScoped<ISocialMediasService, SocialMediasManager>();
         services.AddScoped<ISoftwareLanguagesService, SoftwareLanguagesManager>();
         services.AddScoped<IStudentAppealsService, StudentAppealsManager>();
@@ -111,6 +110,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IForeignLanguagesService, ForeignLanguagesManager>();
         services.AddScoped<IForeignLanguageLevelsService, ForeignLanguageLevelsManager>();
         services.AddScoped<IStudentsService, StudentsManager>();
+        services.AddScoped<IModuleSetsService, ModuleSetsManager>();
         return services;
     }
 

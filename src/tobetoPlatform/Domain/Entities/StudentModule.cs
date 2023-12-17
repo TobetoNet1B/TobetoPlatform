@@ -12,7 +12,7 @@ public class StudentModule:Entity<Guid>
     public Guid ModuleId { get; set; }
     public int? TimeSpent { get; set; }
     public virtual Student Student { get; set; } = null!;
-    public virtual Module Module { get; set; } = null!;
+    public virtual ModuleSet Module { get; set; } = null!;
 
     public StudentModule()
     {

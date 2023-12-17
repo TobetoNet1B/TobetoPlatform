@@ -11,7 +11,7 @@ public class CourseModule:Entity<Guid>
     public Guid CourseId { get; set; }
     public Guid ModuleId { get; set; }
     public virtual Course Course { get; set; } = null!;
-    public virtual Module Module { get; set; } = null!;
+    public virtual ModuleSet Module { get; set; } = null!;
 
     public CourseModule()
     {
