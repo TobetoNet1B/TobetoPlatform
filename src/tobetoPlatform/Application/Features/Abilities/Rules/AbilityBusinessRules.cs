@@ -37,6 +37,6 @@ public class AbilityBusinessRules : BaseBusinessRules
     {
         IPaginate<Ability> result = await _abilityRepository.GetListAsync(c => c.Name == name);
         if (result.Items.Any())
-            throw new Exception("Ability name exitst");
+            throw new Exception(AbilitiesBusinessMessages.AbilityNameExists);
     }
 }

@@ -1,3 +1,4 @@
+using Application.Features.Abilities.Rules;
 using Application.Features.Appeals.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
@@ -27,6 +28,8 @@ public class CreateAppealCommand : IRequest<CreatedAppealResponse>
 
         public async Task<CreatedAppealResponse> Handle(CreateAppealCommand request, CancellationToken cancellationToken)
         {
+            await _appealBusinessRules.AppealNameCanNotBeDuplicationWhenInserted(request.Name);
+
             Appeal appeal = _mapper.Map<Appeal>(request);
 
             await _appealRepository.AddAsync(appeal);

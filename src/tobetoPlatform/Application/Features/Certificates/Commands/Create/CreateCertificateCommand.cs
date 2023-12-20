@@ -29,7 +29,7 @@ public class CreateCertificateCommand : IRequest<CreatedCertificateResponse>
 
         public async Task<CreatedCertificateResponse> Handle(CreateCertificateCommand request, CancellationToken cancellationToken)
         {
-            await _certificateBusinessRules.FileTypeMustBePdf(request.Name);
+            
 
             Certificate certificate = _mapper.Map<Certificate>(request);
 

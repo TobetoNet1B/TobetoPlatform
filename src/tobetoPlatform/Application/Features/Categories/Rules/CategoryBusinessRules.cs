@@ -1,7 +1,9 @@
+using Application.Features.Abilities.Constants;
 using Application.Features.Categories.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Exceptions.Types;
+using Core.Persistence.Paging;
 using Domain.Entities;
 
 namespace Application.Features.Categories.Rules;
@@ -31,4 +33,12 @@ public class CategoryBusinessRules : BaseBusinessRules
         );
         await CategoryShouldExistWhenSelected(category);
     }
+
+    public async Task CategoryNameCanNotBeDuplicationWhenInserted(string name)
+    {
+        IPaginate<Category> result = await _categoryRepository.GetListAsync(c => c.Name == name);
+        if (result.Items.Any())
+            throw new Exception(CategoriesBusinessMessages.CategoryNameExists);
+    }
+
 }
