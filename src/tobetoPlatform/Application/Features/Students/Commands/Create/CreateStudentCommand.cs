@@ -15,11 +15,12 @@ public class CreateStudentCommand : IRequest<CreatedStudentResponse>
     public string? About { get; set; }
     public string? ImgUrl { get; set; }
 
+    public int? UserId { get; set; }
 
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Email { get; set; }
-    public string Password { get; set; }
+    //public string FirstName { get; set; }
+    //public string LastName { get; set; }
+    //public string Email { get; set; }
+    //public string Password { get; set; }
 
     public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand, CreatedStudentResponse>
     {
@@ -44,8 +45,8 @@ public class CreateStudentCommand : IRequest<CreatedStudentResponse>
             //userAddDto.Email = request.Email;
             //userAddDto.Password = request.Password;
 
-            UserAddDto user = _mapper.Map<UserAddDto>(request);
-            await _userService.AddAsync(user);
+            //UserAddDto user = _mapper.Map<UserAddDto>(request);
+            //await _userService.AddAsync(user);
 
 
             Student student = _mapper.Map<Student>(request);

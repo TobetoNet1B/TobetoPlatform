@@ -6,7 +6,7 @@ public class CreateInstructorCommandValidator : AbstractValidator<CreateInstruct
 {
     public CreateInstructorCommandValidator()
     {
-        RuleFor(c => c.Name).NotEmpty();
+        RuleFor(c => c.UserId).NotEmpty();
         RuleFor(c => c.ImgUrl).NotEmpty();
         RuleFor(c => c.Description).NotEmpty();
     }

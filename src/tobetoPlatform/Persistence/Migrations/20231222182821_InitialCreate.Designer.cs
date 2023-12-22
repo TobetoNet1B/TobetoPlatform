@@ -12,8 +12,8 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20231220174918_UserFixed")]
-    partial class UserFixed
+    [Migration("20231222182821_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1608,8 +1608,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 26, 151, 233, 157, 90, 96, 105, 8, 250, 131, 42, 108, 242, 111, 60, 29, 174, 181, 153, 121, 170, 47, 68, 59, 31, 130, 183, 80, 10, 109, 148, 130, 102, 82, 5, 173, 234, 182, 31, 90, 255, 62, 124, 69, 246, 229, 144, 95, 174, 26, 186, 18, 249, 123, 31, 14, 180, 26, 19, 112, 205, 136, 180, 212 },
-                            PasswordSalt = new byte[] { 29, 159, 237, 221, 10, 135, 125, 26, 81, 66, 197, 68, 88, 229, 221, 116, 209, 196, 83, 161, 37, 251, 93, 111, 118, 81, 137, 229, 54, 93, 111, 190, 121, 214, 151, 103, 92, 76, 0, 194, 114, 26, 229, 143, 109, 69, 172, 72, 0, 208, 198, 36, 179, 209, 7, 143, 87, 102, 213, 215, 85, 127, 21, 11, 171, 106, 132, 24, 42, 31, 5, 78, 89, 238, 203, 43, 196, 55, 30, 194, 77, 245, 105, 11, 45, 218, 66, 244, 12, 58, 181, 89, 172, 229, 164, 149, 57, 45, 172, 125, 155, 29, 168, 3, 192, 99, 177, 189, 52, 28, 186, 165, 211, 203, 1, 56, 85, 212, 161, 1, 2, 230, 33, 145, 239, 22, 119, 50 },
+                            PasswordHash = new byte[] { 130, 18, 63, 221, 220, 144, 5, 228, 144, 222, 51, 103, 128, 68, 20, 223, 160, 65, 69, 214, 100, 49, 107, 249, 206, 12, 45, 49, 88, 133, 241, 18, 228, 58, 12, 44, 223, 140, 255, 152, 117, 1, 63, 162, 246, 150, 138, 217, 240, 48, 81, 233, 5, 111, 149, 85, 134, 48, 13, 244, 95, 119, 73, 214 },
+                            PasswordSalt = new byte[] { 117, 117, 148, 248, 116, 137, 188, 40, 144, 37, 13, 13, 56, 212, 84, 130, 89, 218, 179, 144, 44, 145, 29, 143, 255, 101, 236, 199, 178, 162, 250, 202, 49, 150, 104, 209, 216, 60, 190, 116, 243, 150, 17, 54, 56, 160, 8, 209, 51, 76, 99, 189, 118, 14, 94, 200, 113, 227, 35, 224, 254, 204, 161, 203, 60, 23, 208, 250, 55, 124, 55, 18, 223, 242, 24, 240, 164, 45, 90, 224, 63, 61, 121, 135, 168, 197, 148, 67, 49, 199, 107, 79, 82, 0, 202, 250, 134, 247, 239, 84, 50, 190, 56, 119, 212, 184, 195, 48, 111, 152, 167, 163, 116, 59, 178, 205, 98, 241, 120, 93, 151, 37, 11, 68, 130, 33, 239, 245 },
                             Status = true
                         });
                 });
@@ -2557,19 +2557,17 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ImgUrl");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("Name");
-
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDate");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
+                        .HasColumnName("UserId");
+
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Name" }, "UK_Instructors_Name")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("Instructors", (string)null);
                 });
@@ -2860,7 +2858,8 @@ namespace Persistence.Migrations
                         .HasColumnName("UpdatedDate");
 
                     b.Property<int>("UserId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UserId");
 
                     b.HasKey("Id");
 
@@ -3380,6 +3379,17 @@ namespace Persistence.Migrations
                     b.Navigation("City");
 
                     b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Instructor", b =>
+                {
+                    b.HasOne("Core.Security.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Entities.Lesson", b =>

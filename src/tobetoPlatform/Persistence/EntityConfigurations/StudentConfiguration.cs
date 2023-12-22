@@ -20,6 +20,9 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.Property(s => s.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(s => s.DeletedDate).HasColumnName("DeletedDate");
 
+
+        builder.Property(s => s.UserId).HasColumnName("UserId");
+
         builder.HasIndex(indexExpression: b => b.IdentityNumber, name: "UK_Students_Name").IsUnique();
 
         builder.HasOne(b => b.User);

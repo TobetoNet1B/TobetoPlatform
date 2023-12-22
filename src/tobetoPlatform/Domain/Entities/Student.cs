@@ -9,6 +9,7 @@ public class Student : Entity<Guid>
     public string? PhoneNumber { get; set;}
     public string? About { get; set; }
     public string? ImgUrl { get; set; }
+    public int UserId { get; set; }
     public virtual User User { get; set; } = null!;
     public virtual Address Address {  get; set; } = null!;
     public virtual ICollection<Ability> Abilities { get; set; } = null!;

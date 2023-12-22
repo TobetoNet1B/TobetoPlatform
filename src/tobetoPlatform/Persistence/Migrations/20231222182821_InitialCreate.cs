@@ -198,23 +198,6 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Instructors",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Instructors", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "OperationClaims",
                 columns: table => new
                 {
@@ -360,34 +343,6 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CourseInstructors",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    InstructorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CourseInstructors", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CourseInstructors_Courses_CourseId",
-                        column: x => x.CourseId,
-                        principalTable: "Courses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CourseInstructors_Instructors_InstructorId",
-                        column: x => x.InstructorId,
-                        principalTable: "Instructors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ModuleSets",
                 columns: table => new
                 {
@@ -443,6 +398,29 @@ namespace Persistence.Migrations
                     table.PrimaryKey("PK_EmailAuthenticators", x => x.Id);
                     table.ForeignKey(
                         name: "FK_EmailAuthenticators_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Instructors",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Instructors", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Instructors_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -610,11 +588,39 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CourseInstructors",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    InstructorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CourseInstructors", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CourseInstructors_Courses_CourseId",
+                        column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CourseInstructors_Instructors_InstructorId",
+                        column: x => x.InstructorId,
+                        principalTable: "Instructors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Students",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdentityNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IdentityNumber = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     About = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -1235,7 +1241,7 @@ namespace Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 101, 209, 239, 118, 53, 144, 176, 216, 221, 250, 233, 67, 156, 68, 233, 209, 216, 172, 231, 111, 210, 165, 255, 14, 143, 212, 219, 149, 254, 240, 193, 135, 197, 86, 206, 135, 87, 238, 245, 52, 90, 136, 130, 140, 193, 255, 35, 1, 208, 62, 152, 10, 83, 158, 96, 58, 233, 175, 63, 39, 22, 10, 163, 207 }, new byte[] { 224, 30, 228, 127, 196, 128, 14, 31, 235, 6, 115, 222, 101, 7, 19, 72, 72, 45, 16, 205, 90, 37, 137, 143, 105, 62, 142, 35, 68, 56, 239, 121, 178, 81, 59, 203, 219, 142, 205, 238, 3, 13, 156, 12, 155, 95, 231, 253, 133, 247, 41, 199, 41, 237, 24, 11, 25, 80, 147, 128, 115, 116, 115, 145, 192, 83, 15, 209, 86, 134, 175, 239, 127, 182, 142, 98, 251, 204, 62, 125, 37, 151, 221, 113, 250, 231, 46, 89, 30, 88, 73, 188, 216, 6, 201, 245, 244, 74, 237, 40, 51, 10, 213, 242, 90, 127, 234, 80, 81, 71, 18, 225, 76, 191, 63, 76, 133, 88, 218, 120, 38, 19, 238, 60, 66, 9, 87, 233 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 130, 18, 63, 221, 220, 144, 5, 228, 144, 222, 51, 103, 128, 68, 20, 223, 160, 65, 69, 214, 100, 49, 107, 249, 206, 12, 45, 49, 88, 133, 241, 18, 228, 58, 12, 44, 223, 140, 255, 152, 117, 1, 63, 162, 246, 150, 138, 217, 240, 48, 81, 233, 5, 111, 149, 85, 134, 48, 13, 244, 95, 119, 73, 214 }, new byte[] { 117, 117, 148, 248, 116, 137, 188, 40, 144, 37, 13, 13, 56, 212, 84, 130, 89, 218, 179, 144, 44, 145, 29, 143, 255, 101, 236, 199, 178, 162, 250, 202, 49, 150, 104, 209, 216, 60, 190, 116, 243, 150, 17, 54, 56, 160, 8, 209, 51, 76, 99, 189, 118, 14, 94, 200, 113, 227, 35, 224, 254, 204, 161, 203, 60, 23, 208, 250, 55, 124, 55, 18, 223, 242, 24, 240, 164, 45, 90, 224, 63, 61, 121, 135, 168, 197, 148, 67, 49, 199, 107, 79, 82, 0, 202, 250, 134, 247, 239, 84, 50, 190, 56, 119, 212, 184, 195, 48, 111, 152, 167, 163, 116, 59, 178, 205, 98, 241, 120, 93, 151, 37, 11, 68, 130, 33, 239, 245 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
@@ -1414,10 +1420,9 @@ namespace Persistence.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "UK_Instructors_Name",
+                name: "IX_Instructors_UserId",
                 table: "Instructors",
-                column: "Name",
-                unique: true);
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Lessons_CourseId",
@@ -1562,6 +1567,13 @@ namespace Persistence.Migrations
                 name: "IX_Students_UserId",
                 table: "Students",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "UK_Students_Name",
+                table: "Students",
+                column: "IdentityNumber",
+                unique: true,
+                filter: "[IdentityNumber] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Surveys_StudentId",
