@@ -35,5 +35,6 @@ public class Student : Entity<Guid>
         PhoneNumber = phoneNumber;
         About = about;
         ImgUrl = imgUrl;
+
     }
 }

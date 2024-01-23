@@ -74,6 +74,18 @@ builder.Services.AddSwaggerGen(opt =>
     opt.OperationFilter<BearerSecurityRequirementOperationFilter>();
 });
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:3000")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+
 WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -88,6 +100,9 @@ if (app.Environment.IsDevelopment())
 
 if (app.Environment.IsProduction())
     app.ConfigureCustomExceptionMiddleware();
+
+
+app.UseCors("AllowReactApp");
 
 app.UseAuthentication();
 app.UseAuthorization();
