@@ -1605,8 +1605,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 222, 239, 25, 108, 156, 252, 152, 163, 115, 212, 79, 96, 17, 142, 219, 70, 243, 246, 167, 195, 193, 149, 215, 147, 19, 132, 74, 103, 10, 89, 209, 72, 18, 247, 141, 140, 188, 8, 91, 11, 40, 255, 160, 73, 87, 112, 164, 3, 220, 86, 122, 179, 51, 66, 168, 220, 117, 155, 198, 91, 162, 137, 209, 7 },
-                            PasswordSalt = new byte[] { 121, 88, 155, 99, 32, 162, 186, 255, 233, 255, 148, 126, 183, 46, 19, 22, 232, 73, 28, 101, 107, 68, 122, 221, 26, 64, 147, 111, 37, 141, 228, 78, 204, 116, 56, 151, 5, 81, 18, 182, 89, 11, 161, 251, 229, 112, 218, 140, 120, 255, 150, 105, 100, 85, 204, 206, 45, 162, 199, 200, 252, 132, 157, 35, 21, 229, 244, 154, 69, 52, 127, 212, 102, 187, 135, 253, 136, 36, 15, 159, 67, 129, 205, 254, 199, 54, 43, 37, 200, 91, 142, 143, 107, 37, 31, 113, 129, 124, 254, 52, 116, 154, 137, 158, 221, 89, 95, 114, 160, 241, 108, 185, 169, 234, 62, 157, 197, 144, 162, 231, 35, 139, 41, 84, 162, 83, 240, 29 },
+                            PasswordHash = new byte[] { 125, 59, 59, 145, 112, 118, 249, 127, 152, 83, 164, 19, 137, 8, 166, 140, 214, 199, 38, 176, 46, 104, 254, 211, 16, 233, 32, 96, 172, 161, 2, 71, 52, 42, 105, 174, 23, 123, 223, 123, 32, 225, 206, 66, 161, 174, 54, 190, 64, 55, 14, 253, 29, 218, 73, 3, 96, 90, 218, 78, 33, 250, 217, 53 },
+                            PasswordSalt = new byte[] { 132, 144, 249, 136, 146, 148, 94, 136, 20, 198, 104, 75, 192, 189, 53, 254, 181, 190, 169, 84, 231, 47, 22, 178, 134, 168, 221, 253, 70, 196, 71, 254, 54, 87, 138, 12, 42, 74, 116, 236, 250, 22, 68, 89, 150, 91, 242, 222, 138, 216, 214, 103, 43, 195, 156, 5, 18, 118, 130, 149, 156, 163, 139, 147, 219, 147, 88, 207, 66, 54, 40, 186, 34, 27, 53, 230, 189, 250, 88, 11, 134, 204, 137, 88, 59, 67, 253, 189, 12, 80, 35, 132, 198, 52, 106, 183, 15, 187, 37, 28, 254, 56, 145, 96, 216, 185, 231, 64, 220, 235, 126, 166, 141, 199, 186, 192, 80, 225, 222, 124, 154, 45, 175, 67, 97, 135, 58, 245 },
                             Status = true
                         });
                 });
@@ -1678,12 +1678,9 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("Name");
 
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("StudentId");
-
-                    b.Property<Guid>("StudentId1")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
@@ -1691,7 +1688,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StudentId1");
+                    b.HasIndex("StudentId");
 
                     b.HasIndex(new[] { "Name" }, "UK_Abilities_Name")
                         .IsUnique();
@@ -3224,7 +3221,7 @@ namespace Persistence.Migrations
                 {
                     b.HasOne("Domain.Entities.Student", "Student")
                         .WithMany("Abilities")
-                        .HasForeignKey("StudentId1")
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

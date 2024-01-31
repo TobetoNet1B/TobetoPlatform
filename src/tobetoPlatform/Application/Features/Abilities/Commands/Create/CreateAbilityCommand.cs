@@ -9,7 +9,7 @@ namespace Application.Features.Abilities.Commands.Create;
 public class CreateAbilityCommand : IRequest<CreatedAbilityResponse>
 {
     public string Name { get; set; }
-    public int StudentId { get; set; }
+    public Guid StudentId { get; set; }
 
     public class CreateAbilityCommandHandler : IRequestHandler<CreateAbilityCommand, CreatedAbilityResponse>
     {
