@@ -1,10 +1,12 @@
 ﻿using Application.Features.Auth.Rules;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
+using Application.Services.Students;
 using Core.Application.Dtos;
 using Core.Security.Entities;
 using Core.Security.Hashing;
 using Core.Security.JWT;
+using Domain.Entities;
 using MediatR;
 
 namespace Application.Features.Auth.Commands.Register;
@@ -28,12 +30,14 @@ public class RegisterCommand : IRequest<RegisteredResponse>
 
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisteredResponse>
     {
+        private readonly IStudentsService _studentsManager;
         private readonly IUserRepository _userRepository;
         private readonly IAuthService _authService;
         private readonly AuthBusinessRules _authBusinessRules;
 
-        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules)
+        public RegisterCommandHandler(IStudentsService studentsManager, IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules)
         {
+            _studentsManager = studentsManager;
             _userRepository = userRepository;
             _authService = authService;
             _authBusinessRules = authBusinessRules;
@@ -59,6 +63,13 @@ public class RegisterCommand : IRequest<RegisteredResponse>
                     Status = true
                 };
             User createdUser = await _userRepository.AddAsync(newUser);
+
+            Student newStudent = new Student
+            {
+                UserId = createdUser.Id,
+            };
+
+            await _studentsManager.AddAsync(newStudent);
 
             AccessToken createdAccessToken = await _authService.CreateAccessToken(createdUser);
 
