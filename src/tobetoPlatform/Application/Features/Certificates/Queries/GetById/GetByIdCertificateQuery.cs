@@ -1,3 +1,4 @@
+using Application.Features.Abilities.Queries.GetById;
 using Application.Features.Certificates.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
@@ -6,11 +7,11 @@ using MediatR;
 
 namespace Application.Features.Certificates.Queries.GetById;
 
-public class GetByIdCertificateQuery : IRequest<GetByIdCertificateResponse>
+public class GetByIdCertificateQuery : IRequest<List<GetByIdCertificateResponse>>
 {
     public Guid Id { get; set; }
 
-    public class GetByIdCertificateQueryHandler : IRequestHandler<GetByIdCertificateQuery, GetByIdCertificateResponse>
+    public class GetByIdCertificateQueryHandler : IRequestHandler<GetByIdCertificateQuery, List<GetByIdCertificateResponse>>
     {
         private readonly IMapper _mapper;
         private readonly ICertificateRepository _certificateRepository;
@@ -23,13 +24,23 @@ public class GetByIdCertificateQuery : IRequest<GetByIdCertificateResponse>
             _certificateBusinessRules = certificateBusinessRules;
         }
 
-        public async Task<GetByIdCertificateResponse> Handle(GetByIdCertificateQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetByIdCertificateResponse>> Handle(GetByIdCertificateQuery request, CancellationToken cancellationToken)
         {
-            Certificate? certificate = await _certificateRepository.GetAsync(predicate: c => c.Id == request.Id, cancellationToken: cancellationToken);
+
+            var certificates = await _certificateRepository.GetListAsync(
+            predicate: a => a.StudentId == request.Id,
+            cancellationToken: cancellationToken);
+
+            List<GetByIdCertificateResponse> response = _mapper.Map<List<GetByIdCertificateResponse>>(certificates.Items);
+
+            /*Certificate? certificate = await _certificateRepository.GetAsync(predicate: c => c.Id == request.Id, cancellationToken: cancellationToken);
             await _certificateBusinessRules.CertificateShouldExistWhenSelected(certificate);
 
-            GetByIdCertificateResponse response = _mapper.Map<GetByIdCertificateResponse>(certificate);
+            GetByIdCertificateResponse response = _mapper.Map<GetByIdCertificateResponse>(certificate);*/
+
+
             return response;
+
         }
     }
 }

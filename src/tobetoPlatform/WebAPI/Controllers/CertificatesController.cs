@@ -6,6 +6,7 @@ using Application.Features.Certificates.Queries.GetList;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace WebAPI.Controllers;
 
@@ -40,7 +41,7 @@ public class CertificatesController : BaseController
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById([FromRoute] Guid id)
     {
-        GetByIdCertificateResponse response = await Mediator.Send(new GetByIdCertificateQuery { Id = id });
+        List <GetByIdCertificateResponse> response = await Mediator.Send(new GetByIdCertificateQuery { Id = id });
         return Ok(response);
     }
 
