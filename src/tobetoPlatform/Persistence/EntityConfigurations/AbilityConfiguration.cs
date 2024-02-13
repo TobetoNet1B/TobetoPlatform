@@ -17,7 +17,7 @@ public class AbilityConfiguration : IEntityTypeConfiguration<Ability>
         builder.Property(a => a.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(a => a.DeletedDate).HasColumnName("DeletedDate");
 
-        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Abilities_Name").IsUnique();
+        
         builder.HasOne(b => b.Student);
 
         builder.HasQueryFilter(a => !a.DeletedDate.HasValue);

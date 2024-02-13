@@ -2,6 +2,7 @@ using Application.Features.Certificates.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Exceptions.Types;
+using Core.Persistence.Paging;
 using Domain.Entities;
 
 namespace Application.Features.Certificates.Rules;
@@ -32,8 +33,16 @@ public class CertificateBusinessRules : BaseBusinessRules
         await CertificateShouldExistWhenSelected(certificate);
     }
 
- 
+    public async Task CertificateNameCanNotBeDuplicationWhenInserted(Guid id, Certificate certificate)
+    {
+        IPaginate<Certificate> result = await _certificateRepository.GetListAsync(s => s.StudentId == id);
+        if (result.Items.Any(c => c.Name == certificate.Name))
+        {
+            throw new BusinessException(CertificatesBusinessMessages.CertificateNameExists);
+        }
+
+    }
 
 
-    
+
 }

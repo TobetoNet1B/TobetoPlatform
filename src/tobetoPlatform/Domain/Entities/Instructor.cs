@@ -8,6 +8,7 @@ public class Instructor: Entity<Guid>
     public string? ImgUrl { get; set; }
     public string? Description { get; set; }
     public virtual User User { get; set; } = null!;
+    public virtual ICollection<ModuleSet> ModuleSets { get; set; } = null!;
     public virtual ICollection<CourseInstructor> CourseInstructors { get; set; } = null!;
 
     public Instructor()
@@ -15,11 +16,10 @@ public class Instructor: Entity<Guid>
         
     }
 
-    public Instructor(Guid Id, int userId, string? ımgUrl, string? description, User user):base(Id)
+    public Instructor(Guid Id, int userId, string? imgUrl, string? description):base(Id)
     {
         UserId = userId;
-        ImgUrl = ımgUrl;
+        ImgUrl = imgUrl;
         Description = description;
-        User = user;
     }
 }

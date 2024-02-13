@@ -14,5 +14,6 @@ public class UpdateLessonCommandValidator : AbstractValidator<UpdateLessonComman
         RuleFor(c => c.LessonType).NotEmpty();
         RuleFor(c => c.Duration).NotEmpty();
         RuleFor(c => c.CourseId).NotEmpty();
+        RuleFor(c => c.SpeakerId).NotEmpty();
     }
 }

@@ -39,12 +39,11 @@ public class GetByUserIdStudentQuery : IRequest<GetByIdStudentResponse>
                            .Include(s => s.StudentClassrooms)
                                .ThenInclude(se => se.Classroom)
                            .Include(s => s.Experiences)
-                           .Include(s => s.SocialMedias)
+                           .Include(s => s.StudentSocialMedias).ThenInclude(s => s.SocialMedia)
                            .Include(s => s.Educations)
                            .Include(s => s.Certificates)
-                           .Include(s => s.Abilities)
+                           .Include(s => s.Abilities),
 
-                                ,
             predicate: s => s.UserId == request.UserId,
             cancellationToken: cancellationToken);
 
@@ -68,7 +67,7 @@ public class GetByUserIdStudentQuery : IRequest<GetByIdStudentResponse>
                                        .Select(se => _mapper.Map<StudentClassroomsDto>(se))
                                        .ToList();
 
-            response.SocialMedias = student.SocialMedias
+            response.SocialMedias = student.StudentSocialMedias
                                        .Select(se => _mapper.Map<SocialMediasDto>(se))
                                        .ToList();
 

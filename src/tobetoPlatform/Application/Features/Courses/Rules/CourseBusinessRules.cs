@@ -32,6 +32,7 @@ public class CourseBusinessRules : BaseBusinessRules
         );
         await CourseShouldExistWhenSelected(course);
     }
+
     public async Task CourseNameCanNotBeDuplicationWhenInserted(string name)
     {
         IPaginate<Course> result = await _courseRepository.GetListAsync(c => c.Name == name);

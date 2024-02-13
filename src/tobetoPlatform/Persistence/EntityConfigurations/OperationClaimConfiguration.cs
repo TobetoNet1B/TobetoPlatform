@@ -330,6 +330,62 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "StudentClassrooms.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "StudentClassrooms.Delete" });
         #endregion
+        #region CategoryOfCourses
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfCourses.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfCourses.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfCourses.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfCourses.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfCourses.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfCourses.Delete" });
+        #endregion
+        #region CategoryOfModuleSets
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfModuleSets.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfModuleSets.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfModuleSets.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfModuleSets.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfModuleSets.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CategoryOfModuleSets.Delete" });
+        #endregion
+        #region ClassroomModules
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomModules.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomModules.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomModules.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomModules.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomModules.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomModules.Delete" });
+        #endregion
+        #region ModuleSetCategories
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSetCategories.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSetCategories.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSetCategories.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSetCategories.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSetCategories.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleSetCategories.Delete" });
+        #endregion
+        #region ModuleTypes
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleTypes.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleTypes.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleTypes.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleTypes.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleTypes.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ModuleTypes.Delete" });
+        #endregion
+        #region Speakers
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Speakers.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Speakers.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Speakers.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Speakers.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Speakers.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Speakers.Delete" });
+        #endregion
+        #region StudentSocialMedias
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentSocialMedias.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentSocialMedias.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentSocialMedias.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentSocialMedias.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentSocialMedias.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "StudentSocialMedias.Delete" });
+        #endregion
         return seeds;
     }
 }

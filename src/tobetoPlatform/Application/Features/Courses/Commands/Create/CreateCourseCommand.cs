@@ -9,13 +9,6 @@ namespace Application.Features.Courses.Commands.Create;
 public class CreateCourseCommand : IRequest<CreatedCourseResponse>
 {
     public string Name { get; set; }
-    public string? CourseTitle { get; set; }
-    public string? Description { get; set; }
-    public int? CourseLevel { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public int? EstimatedTime { get; set; }
-    public string ActivityStatus { get; set; }
 
     public class CreateCourseCommandHandler : IRequestHandler<CreateCourseCommand, CreatedCourseResponse>
     {
@@ -33,8 +26,6 @@ public class CreateCourseCommand : IRequest<CreatedCourseResponse>
 
         public async Task<CreatedCourseResponse> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
         {
-            await _courseBusinessRules.CourseNameCanNotBeDuplicationWhenInserted(request.Name);
-
             Course course = _mapper.Map<Course>(request);
 
             await _courseRepository.AddAsync(course);

@@ -32,7 +32,7 @@ public class CreateCertificateCommand : IRequest<CreatedCertificateResponse>
             
 
             Certificate certificate = _mapper.Map<Certificate>(request);
-
+            await _certificateBusinessRules.CertificateNameCanNotBeDuplicationWhenInserted(request.StudentId, certificate);
             await _certificateRepository.AddAsync(certificate);
 
             CreatedCertificateResponse response = _mapper.Map<CreatedCertificateResponse>(certificate);

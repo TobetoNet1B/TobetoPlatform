@@ -1,6 +1,4 @@
 using Core.Application.Responses;
-using Core.Security.Entities;
-using Domain.Entities;
 
 namespace Application.Features.Students.Queries.GetById;
 
@@ -22,7 +20,4 @@ public class GetByIdStudentResponse : IResponse
     public List<EducationsDto>? Educations { get; set; } = new List<EducationsDto>();
     public List<CertificatesDto>? Certificates { get; set; } = new List<CertificatesDto>();
     public List<AbilitiesDto>? Abilities { get; set; } = new List<AbilitiesDto>();
-    
-
-
 }

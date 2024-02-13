@@ -1,5 +1,4 @@
 using FluentValidation;
-using System.Security.Principal;
 
 namespace Application.Features.Students.Commands.Create;
 
@@ -22,39 +21,12 @@ public class CreateStudentCommandValidator : AbstractValidator<CreateStudentComm
         RuleFor(c => c.BirthDate)
             .LessThanOrEqualTo(DateTime.Today);
 
-        /*RuleFor(c => c.IdentityNumber)
-            .NotEmpty().WithMessage("TC kimlik numarasý boþ olamaz.")
-            .Length(11).WithMessage("TC kimlik numarasý 11 haneli olmalýdýr.")
-            .Must(BeNumeric).WithMessage("TC kimlik numarasý sadece rakamlardan oluþmalýdýr.")
-            .Must(NotAllDigitsAreSame).WithMessage("TC kimlik numarasýnýn tüm rakamlarý ayný olamaz.")
-            .Must(FirstDigitIsNotZero).WithMessage("TC kimlik numarasýnýn ilk hanesi 0 olamaz.")
-            .Must(ValidateLastDigit).WithMessage("TC kimlik numarasýnýn son hanesi geçerli deðildir.");*/
-    }
-    /*
-    private bool BeNumeric(string value)
-    {
-        return value.All(char.IsDigit);
+
     }
 
-    private bool NotAllDigitsAreSame(string value)
-    {
-        return !value.Distinct().Count().Equals(1);
-    }
-
-    private bool FirstDigitIsNotZero(string value)
-    {
-        return value[0] != '0';
-    }
-
-    private bool ValidateLastDigit(string value)
-    {
-        int sum = value.Take(10).Sum(c => c - '0');
-        int lastDigit = sum % 10;
-        return lastDigit == (value[10] - '0');
-    }*/
 
 
-    
+
     private bool BeValidIdentityNumber(string identityNumber)
     {
         if (string.IsNullOrEmpty(identityNumber) || identityNumber.Length != 11)

@@ -7,6 +7,6 @@ public class CreateCourseCategoryCommandValidator : AbstractValidator<CreateCour
     public CreateCourseCategoryCommandValidator()
     {
         RuleFor(c => c.CourseId).NotEmpty();
-        RuleFor(c => c.CategoryId).NotEmpty();
+        RuleFor(c => c.CategoryOfCourseId).NotEmpty();
     }
 }

@@ -1,11 +1,15 @@
 using Application;
 using Core.CrossCuttingConcerns.Exceptions.Extensions;
+using Core.Mailing;
+using Core.Mailing.MailKitImplementations;
 using Core.Security;
+using Core.Security.EmailAuthenticator;
 using Core.Security.Encryption;
 using Core.Security.JWT;
 using Core.WebAPI.Extensions.Swagger;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Persistence;
@@ -22,6 +26,14 @@ builder.Services.AddSecurityServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddInfrastructureServices();
 builder.Services.AddHttpContextAccessor();
+
+
+builder.Services.AddScoped<IMailService, MailKitMailService>();
+builder.Services.AddScoped<IEmailAuthenticatorHelper, EmailAuthenticatorHelper>();
+
+
+
+
 
 const string tokenOptionsConfigurationSection = "TokenOptions";
 TokenOptions tokenOptions =

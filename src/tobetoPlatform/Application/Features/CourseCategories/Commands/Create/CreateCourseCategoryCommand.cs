@@ -9,7 +9,7 @@ namespace Application.Features.CourseCategories.Commands.Create;
 public class CreateCourseCategoryCommand : IRequest<CreatedCourseCategoryResponse>
 {
     public Guid CourseId { get; set; }
-    public Guid CategoryId { get; set; }
+    public Guid CategoryOfCourseId { get; set; }
 
     public class CreateCourseCategoryCommandHandler : IRequestHandler<CreateCourseCategoryCommand, CreatedCourseCategoryResponse>
     {

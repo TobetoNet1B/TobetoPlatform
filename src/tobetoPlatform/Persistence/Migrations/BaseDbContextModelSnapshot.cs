@@ -1430,6 +1430,258 @@ namespace Persistence.Migrations
                             Id = 223,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "StudentClassrooms.Delete"
+                        },
+                        new
+                        {
+                            Id = 224,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfCourses.Admin"
+                        },
+                        new
+                        {
+                            Id = 225,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfCourses.Read"
+                        },
+                        new
+                        {
+                            Id = 226,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfCourses.Write"
+                        },
+                        new
+                        {
+                            Id = 227,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfCourses.Add"
+                        },
+                        new
+                        {
+                            Id = 228,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfCourses.Update"
+                        },
+                        new
+                        {
+                            Id = 229,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfCourses.Delete"
+                        },
+                        new
+                        {
+                            Id = 230,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfModuleSets.Admin"
+                        },
+                        new
+                        {
+                            Id = 231,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfModuleSets.Read"
+                        },
+                        new
+                        {
+                            Id = 232,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfModuleSets.Write"
+                        },
+                        new
+                        {
+                            Id = 233,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfModuleSets.Add"
+                        },
+                        new
+                        {
+                            Id = 234,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfModuleSets.Update"
+                        },
+                        new
+                        {
+                            Id = 235,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CategoryOfModuleSets.Delete"
+                        },
+                        new
+                        {
+                            Id = 236,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ClassroomModules.Admin"
+                        },
+                        new
+                        {
+                            Id = 237,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ClassroomModules.Read"
+                        },
+                        new
+                        {
+                            Id = 238,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ClassroomModules.Write"
+                        },
+                        new
+                        {
+                            Id = 239,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ClassroomModules.Add"
+                        },
+                        new
+                        {
+                            Id = 240,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ClassroomModules.Update"
+                        },
+                        new
+                        {
+                            Id = 241,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ClassroomModules.Delete"
+                        },
+                        new
+                        {
+                            Id = 242,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleSetCategories.Admin"
+                        },
+                        new
+                        {
+                            Id = 243,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleSetCategories.Read"
+                        },
+                        new
+                        {
+                            Id = 244,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleSetCategories.Write"
+                        },
+                        new
+                        {
+                            Id = 245,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleSetCategories.Add"
+                        },
+                        new
+                        {
+                            Id = 246,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleSetCategories.Update"
+                        },
+                        new
+                        {
+                            Id = 247,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleSetCategories.Delete"
+                        },
+                        new
+                        {
+                            Id = 248,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleTypes.Admin"
+                        },
+                        new
+                        {
+                            Id = 249,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleTypes.Read"
+                        },
+                        new
+                        {
+                            Id = 250,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleTypes.Write"
+                        },
+                        new
+                        {
+                            Id = 251,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleTypes.Add"
+                        },
+                        new
+                        {
+                            Id = 252,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleTypes.Update"
+                        },
+                        new
+                        {
+                            Id = 253,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ModuleTypes.Delete"
+                        },
+                        new
+                        {
+                            Id = 254,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Speakers.Admin"
+                        },
+                        new
+                        {
+                            Id = 255,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Speakers.Read"
+                        },
+                        new
+                        {
+                            Id = 256,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Speakers.Write"
+                        },
+                        new
+                        {
+                            Id = 257,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Speakers.Add"
+                        },
+                        new
+                        {
+                            Id = 258,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Speakers.Update"
+                        },
+                        new
+                        {
+                            Id = 259,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Speakers.Delete"
+                        },
+                        new
+                        {
+                            Id = 260,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "StudentSocialMedias.Admin"
+                        },
+                        new
+                        {
+                            Id = 261,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "StudentSocialMedias.Read"
+                        },
+                        new
+                        {
+                            Id = 262,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "StudentSocialMedias.Write"
+                        },
+                        new
+                        {
+                            Id = 263,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "StudentSocialMedias.Add"
+                        },
+                        new
+                        {
+                            Id = 264,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "StudentSocialMedias.Update"
+                        },
+                        new
+                        {
+                            Id = 265,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "StudentSocialMedias.Delete"
                         });
                 });
 
@@ -1605,8 +1857,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 125, 59, 59, 145, 112, 118, 249, 127, 152, 83, 164, 19, 137, 8, 166, 140, 214, 199, 38, 176, 46, 104, 254, 211, 16, 233, 32, 96, 172, 161, 2, 71, 52, 42, 105, 174, 23, 123, 223, 123, 32, 225, 206, 66, 161, 174, 54, 190, 64, 55, 14, 253, 29, 218, 73, 3, 96, 90, 218, 78, 33, 250, 217, 53 },
-                            PasswordSalt = new byte[] { 132, 144, 249, 136, 146, 148, 94, 136, 20, 198, 104, 75, 192, 189, 53, 254, 181, 190, 169, 84, 231, 47, 22, 178, 134, 168, 221, 253, 70, 196, 71, 254, 54, 87, 138, 12, 42, 74, 116, 236, 250, 22, 68, 89, 150, 91, 242, 222, 138, 216, 214, 103, 43, 195, 156, 5, 18, 118, 130, 149, 156, 163, 139, 147, 219, 147, 88, 207, 66, 54, 40, 186, 34, 27, 53, 230, 189, 250, 88, 11, 134, 204, 137, 88, 59, 67, 253, 189, 12, 80, 35, 132, 198, 52, 106, 183, 15, 187, 37, 28, 254, 56, 145, 96, 216, 185, 231, 64, 220, 235, 126, 166, 141, 199, 186, 192, 80, 225, 222, 124, 154, 45, 175, 67, 97, 135, 58, 245 },
+                            PasswordHash = new byte[] { 41, 110, 78, 221, 112, 172, 143, 126, 32, 36, 61, 108, 208, 56, 154, 147, 156, 159, 47, 253, 0, 213, 181, 93, 226, 110, 75, 49, 176, 36, 207, 21, 192, 211, 115, 51, 45, 234, 248, 101, 230, 21, 105, 103, 200, 212, 149, 126, 40, 229, 186, 226, 218, 30, 230, 248, 148, 206, 115, 74, 251, 189, 180, 253 },
+                            PasswordSalt = new byte[] { 38, 241, 83, 160, 166, 8, 1, 154, 136, 185, 154, 236, 32, 29, 124, 43, 120, 69, 22, 219, 187, 168, 231, 115, 142, 129, 246, 119, 131, 104, 9, 142, 4, 231, 76, 234, 105, 126, 28, 221, 174, 167, 59, 85, 143, 35, 139, 232, 74, 123, 187, 23, 83, 123, 122, 100, 178, 121, 188, 185, 203, 65, 177, 116, 118, 87, 239, 60, 17, 9, 93, 18, 172, 192, 194, 166, 9, 157, 29, 1, 67, 72, 147, 81, 253, 214, 120, 52, 219, 20, 36, 219, 165, 80, 0, 106, 134, 253, 126, 150, 16, 112, 197, 2, 91, 219, 244, 218, 135, 137, 154, 42, 115, 115, 97, 69, 9, 10, 126, 179, 229, 53, 207, 105, 130, 35, 191, 186 },
                             Status = true
                         });
                 });
@@ -1675,7 +1927,7 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
 
                     b.Property<Guid>("StudentId")
@@ -1689,9 +1941,6 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("StudentId");
-
-                    b.HasIndex(new[] { "Name" }, "UK_Abilities_Name")
-                        .IsUnique();
 
                     b.ToTable("Abilities", (string)null);
                 });
@@ -1806,7 +2055,7 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -1814,9 +2063,6 @@ namespace Persistence.Migrations
                         .HasColumnName("UpdatedDate");
 
                     b.HasKey("Id");
-
-                    b.HasIndex(new[] { "Name" }, "UK_Appeals_Name")
-                        .IsUnique();
 
                     b.ToTable("Appeals", (string)null);
                 });
@@ -1860,7 +2106,7 @@ namespace Persistence.Migrations
                     b.ToTable("Blogs", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Entities.Category", b =>
+            modelBuilder.Entity("Domain.Entities.CategoryOfCourse", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1884,13 +2130,41 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("Name");
 
-                    b.Property<int?>("OrderNo")
-                        .HasColumnType("int")
-                        .HasColumnName("OrderNo");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
 
-                    b.Property<int?>("ParentId")
-                        .HasColumnType("int")
-                        .HasColumnName("ParentId");
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "Name" }, "UK_CategoryOfCourses_Name")
+                        .IsUnique();
+
+                    b.ToTable("CategoryOfCourses", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.CategoryOfModuleSet", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Name");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
@@ -1898,10 +2172,10 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Name" }, "UK_Categories_Name")
+                    b.HasIndex(new[] { "Name" }, "UK_CategoryOfModuleSets_Name")
                         .IsUnique();
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("CategoryOfModuleSets", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
@@ -1928,7 +2202,7 @@ namespace Persistence.Migrations
                         .HasColumnName("FileUrl");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
 
                     b.Property<Guid>("StudentId")
@@ -1942,10 +2216,6 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("StudentId");
-
-                    b.HasIndex(new[] { "Name" }, "UK_Certificates_Name")
-                        .IsUnique()
-                        .HasFilter("[Name] IS NOT NULL");
 
                     b.ToTable("Certificates", (string)null);
                 });
@@ -2009,7 +2279,7 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -2018,10 +2288,51 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Name" }, "UK_Classrooms_Name")
-                        .IsUnique();
-
                     b.ToTable("Classrooms", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.ClassroomModule", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime?>("ClassroomEndDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("ClassroomEndDate");
+
+                    b.Property<Guid>("ClassroomId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ClassroomId");
+
+                    b.Property<DateTime?>("ClassroomStartDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("ClassroomStartDate");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<Guid>("ModuleSetId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ModuleSetId");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClassroomId");
+
+                    b.HasIndex("ModuleSetId");
+
+                    b.ToTable("ClassroomModules", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Company", b =>
@@ -2095,19 +2406,6 @@ namespace Persistence.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
-                    b.Property<string>("ActivityStatus")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ActivityStatus");
-
-                    b.Property<int?>("CourseLevel")
-                        .HasColumnType("int")
-                        .HasColumnName("CourseLevel");
-
-                    b.Property<string>("CourseTitle")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("CourseTitle");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
@@ -2116,35 +2414,16 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletedDate");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Description");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("EndDate");
-
-                    b.Property<int?>("EstimatedTime")
-                        .HasColumnType("int")
-                        .HasColumnName("EstimatedTime");
-
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("StartDate");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDate");
 
                     b.HasKey("Id");
-
-                    b.HasIndex(new[] { "Name" }, "UK_Courses_Name")
-                        .IsUnique();
 
                     b.ToTable("Courses", (string)null);
                 });
@@ -2156,9 +2435,9 @@ namespace Persistence.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid>("CategoryOfCourseId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CategoryId");
+                        .HasColumnName("CategoryOfCourseId");
 
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier")
@@ -2178,7 +2457,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CategoryOfCourseId");
 
                     b.HasIndex("CourseId");
 
@@ -2573,7 +2852,8 @@ namespace Persistence.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
-                    b.Property<Guid>("CourseId")
+                    b.Property<Guid?>("CourseId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CourseId");
 
@@ -2586,7 +2866,6 @@ namespace Persistence.Migrations
                         .HasColumnName("DeletedDate");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Description");
 
@@ -2599,7 +2878,6 @@ namespace Persistence.Migrations
                         .HasColumnName("ImgUrl");
 
                     b.Property<string>("LessonType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("LessonType");
 
@@ -2610,8 +2888,13 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
+
+                    b.Property<Guid?>("SpeakerId")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("SpeakerId");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
@@ -2621,8 +2904,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.HasIndex(new[] { "Name" }, "UK_Lessons_Name")
-                        .IsUnique();
+                    b.HasIndex("SpeakerId");
 
                     b.ToTable("Lessons", (string)null);
                 });
@@ -2670,13 +2952,18 @@ namespace Persistence.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CategoryId");
+                    b.Property<string>("ActivityStatus")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ActivityStatus");
 
-                    b.Property<Guid>("CompanyId")
+                    b.Property<Guid?>("CompanyId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CompanyId");
+
+                    b.Property<string>("CourseLevel")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("CourseLevel");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
@@ -2686,24 +2973,49 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletedDate");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
+                    b.Property<string>("EducationType")
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Description");
+                        .HasColumnName("EducationType");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("EndDate");
+
+                    b.Property<int?>("EstimatedTime")
+                        .HasColumnType("int")
+                        .HasColumnName("EstimatedTime");
 
                     b.Property<string>("ImgUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ImgUrl");
+
+                    b.Property<Guid?>("InstructorId")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("InstructorId");
+
+                    b.Property<Guid?>("ModuleTypeId")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ModuleTypeId");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("Name");
 
-                    b.Property<Guid>("SoftwareLanguageId")
+                    b.Property<Guid?>("SoftwareLanguageId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("SoftwareLanguageId");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("StartDate");
+
+                    b.Property<string>("Topic")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Topic");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
@@ -2711,9 +3023,11 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("CompanyId");
+
+                    b.HasIndex("InstructorId");
+
+                    b.HasIndex("ModuleTypeId");
 
                     b.HasIndex("SoftwareLanguageId");
 
@@ -2721,6 +3035,74 @@ namespace Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("ModuleSets", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.ModuleSetCategory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<Guid>("CategoryOfModuleSetId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CategoryOfModuleSetId");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<Guid>("ModuleSetId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ModuleSetId");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryOfModuleSetId");
+
+                    b.HasIndex("ModuleSetId");
+
+                    b.ToTable("ModuleSetCategories", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.ModuleType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Name");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "Name" }, "UK_ModuleTypes_Name")
+                        .IsUnique();
+
+                    b.ToTable("ModuleTypes", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.SocialMedia", b =>
@@ -2738,32 +3120,20 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletedDate");
 
-                    b.Property<string>("Icon")
-                        .IsRequired()
+                    b.Property<string>("IconUrl")
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Icon");
+                        .HasColumnName("IconUrl");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("Name");
 
-                    b.Property<string>("SocialMediaUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("SocialMediaUrl");
-
-                    b.Property<Guid>("StudentId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("StudentId");
-
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDate");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("StudentId");
 
                     b.HasIndex(new[] { "Name" }, "UK_SocialMedias_Name")
                         .IsUnique();
@@ -2803,6 +3173,44 @@ namespace Persistence.Migrations
                     b.ToTable("SoftwareLanguages", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.Speaker", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("About")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("About");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("FirstName");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("LastName");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Speakers", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.Student", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2836,7 +3244,7 @@ namespace Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("IdentityNumber")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("IdentityNumber");
 
                     b.Property<string>("ImgUrl")
@@ -2865,10 +3273,6 @@ namespace Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.HasIndex(new[] { "IdentityNumber" }, "UK_Students_Name")
-                        .IsUnique()
-                        .HasFilter("[IdentityNumber] IS NOT NULL");
-
                     b.ToTable("Students", (string)null);
                 });
 
@@ -2891,7 +3295,7 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletedDate");
 
-                    b.Property<bool>("IsApproved")
+                    b.Property<bool?>("IsApproved")
                         .HasColumnType("bit")
                         .HasColumnName("IsApproved");
 
@@ -3079,11 +3483,49 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ModuleSetId");
-
                     b.HasIndex("StudentId");
 
                     b.ToTable("StudentModules", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.StudentSocialMedia", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<Guid>("SocialMediaId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("SocialMediaId");
+
+                    b.Property<string>("SocialMediaUrl")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SocialMediaUrl");
+
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("StudentId");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SocialMediaId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("StudentSocialMedias", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Survey", b =>
@@ -3110,12 +3552,11 @@ namespace Persistence.Migrations
                         .HasColumnName("StudentId");
 
                     b.Property<string>("SurveyUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("SurveyUrl");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Title");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -3125,10 +3566,6 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("StudentId");
-
-                    b.HasIndex(new[] { "Title" }, "UK_Surveys_Name")
-                        .IsUnique()
-                        .HasFilter("[Title] IS NOT NULL");
 
                     b.ToTable("Surveys", (string)null);
                 });
@@ -3277,11 +3714,30 @@ namespace Persistence.Migrations
                     b.Navigation("Country");
                 });
 
+            modelBuilder.Entity("Domain.Entities.ClassroomModule", b =>
+                {
+                    b.HasOne("Domain.Entities.Classroom", "Classroom")
+                        .WithMany("ClassroomModules")
+                        .HasForeignKey("ClassroomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.ModuleSet", "ModuleSet")
+                        .WithMany("ClassroomModules")
+                        .HasForeignKey("ModuleSetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Classroom");
+
+                    b.Navigation("ModuleSet");
+                });
+
             modelBuilder.Entity("Domain.Entities.CourseCategory", b =>
                 {
-                    b.HasOne("Domain.Entities.Category", "Category")
+                    b.HasOne("Domain.Entities.CategoryOfCourse", "CategoryOfCourse")
                         .WithMany("CourseCategories")
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("CategoryOfCourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -3291,7 +3747,7 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("CategoryOfCourse");
 
                     b.Navigation("Course");
                 });
@@ -3394,7 +3850,15 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.Speaker", "Speaker")
+                        .WithMany("Lessons")
+                        .HasForeignKey("SpeakerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Course");
+
+                    b.Navigation("Speaker");
                 });
 
             modelBuilder.Entity("Domain.Entities.LessonTag", b =>
@@ -3418,15 +3882,21 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.ModuleSet", b =>
                 {
-                    b.HasOne("Domain.Entities.Category", "Category")
-                        .WithMany("ModuleSets")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.Entities.Company", "Company")
                         .WithMany("ModuleSets")
                         .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Instructor", "Instructor")
+                        .WithMany("ModuleSets")
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.ModuleType", "ModuleType")
+                        .WithMany("ModuleSets")
+                        .HasForeignKey("ModuleTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -3436,22 +3906,32 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
-
                     b.Navigation("Company");
+
+                    b.Navigation("Instructor");
+
+                    b.Navigation("ModuleType");
 
                     b.Navigation("SoftwareLanguage");
                 });
 
-            modelBuilder.Entity("Domain.Entities.SocialMedia", b =>
+            modelBuilder.Entity("Domain.Entities.ModuleSetCategory", b =>
                 {
-                    b.HasOne("Domain.Entities.Student", "Student")
-                        .WithMany("SocialMedias")
-                        .HasForeignKey("StudentId")
+                    b.HasOne("Domain.Entities.CategoryOfModuleSet", "CategoryOfModuleSet")
+                        .WithMany("ModuleSetCategories")
+                        .HasForeignKey("CategoryOfModuleSetId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Student");
+                    b.HasOne("Domain.Entities.ModuleSet", "ModuleSet")
+                        .WithMany("ModuleSetCategorys")
+                        .HasForeignKey("ModuleSetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CategoryOfModuleSet");
+
+                    b.Navigation("ModuleSet");
                 });
 
             modelBuilder.Entity("Domain.Entities.Student", b =>
@@ -3565,17 +4045,36 @@ namespace Persistence.Migrations
                 {
                     b.HasOne("Domain.Entities.ModuleSet", "ModuleSet")
                         .WithMany("StudentModules")
-                        .HasForeignKey("ModuleSetId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Student", "Student")
                         .WithMany("StudentModules")
                         .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("ModuleSet");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("Domain.Entities.StudentSocialMedia", b =>
+                {
+                    b.HasOne("Domain.Entities.SocialMedia", "SocialMedia")
+                        .WithMany("StudentSocialMedias")
+                        .HasForeignKey("SocialMediaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Student", "Student")
+                        .WithMany("StudentSocialMedias")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SocialMedia");
 
                     b.Navigation("Student");
                 });
@@ -3612,11 +4111,14 @@ namespace Persistence.Migrations
                     b.Navigation("StudentAppeals");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Category", b =>
+            modelBuilder.Entity("Domain.Entities.CategoryOfCourse", b =>
                 {
                     b.Navigation("CourseCategories");
+                });
 
-                    b.Navigation("ModuleSets");
+            modelBuilder.Entity("Domain.Entities.CategoryOfModuleSet", b =>
+                {
+                    b.Navigation("ModuleSetCategories");
                 });
 
             modelBuilder.Entity("Domain.Entities.City", b =>
@@ -3630,6 +4132,8 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Classroom", b =>
                 {
+                    b.Navigation("ClassroomModules");
+
                     b.Navigation("StudentClassrooms");
                 });
 
@@ -3679,6 +4183,8 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Instructor", b =>
                 {
                     b.Navigation("CourseInstructors");
+
+                    b.Navigation("ModuleSets");
                 });
 
             modelBuilder.Entity("Domain.Entities.Lesson", b =>
@@ -3688,14 +4194,33 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.ModuleSet", b =>
                 {
+                    b.Navigation("ClassroomModules");
+
                     b.Navigation("CourseModules");
 
+                    b.Navigation("ModuleSetCategorys");
+
                     b.Navigation("StudentModules");
+                });
+
+            modelBuilder.Entity("Domain.Entities.ModuleType", b =>
+                {
+                    b.Navigation("ModuleSets");
+                });
+
+            modelBuilder.Entity("Domain.Entities.SocialMedia", b =>
+                {
+                    b.Navigation("StudentSocialMedias");
                 });
 
             modelBuilder.Entity("Domain.Entities.SoftwareLanguage", b =>
                 {
                     b.Navigation("ModuleSets");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Speaker", b =>
+                {
+                    b.Navigation("Lessons");
                 });
 
             modelBuilder.Entity("Domain.Entities.Student", b =>
@@ -3711,8 +4236,6 @@ namespace Persistence.Migrations
 
                     b.Navigation("Experiences");
 
-                    b.Navigation("SocialMedias");
-
                     b.Navigation("StudentAppeals");
 
                     b.Navigation("StudentClassrooms");
@@ -3722,6 +4245,8 @@ namespace Persistence.Migrations
                     b.Navigation("StudentForeignLanguages");
 
                     b.Navigation("StudentModules");
+
+                    b.Navigation("StudentSocialMedias");
 
                     b.Navigation("Surveys");
                 });

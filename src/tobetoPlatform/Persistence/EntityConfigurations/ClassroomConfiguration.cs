@@ -17,8 +17,10 @@ public class ClassroomConfiguration : IEntityTypeConfiguration<Classroom>
         builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
-        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Classrooms_Name").IsUnique();
+
         builder.HasMany(b => b.StudentClassrooms);
+        builder.HasMany(b => b.ClassroomModules);
+
 
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
     }

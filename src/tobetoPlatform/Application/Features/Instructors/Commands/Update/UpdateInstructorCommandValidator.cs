@@ -7,7 +7,7 @@ public class UpdateInstructorCommandValidator : AbstractValidator<UpdateInstruct
     public UpdateInstructorCommandValidator()
     {
         RuleFor(c => c.Id).NotEmpty();
-        RuleFor(c => c.Name).NotEmpty();
+        RuleFor(c => c.UserId).NotEmpty();
         RuleFor(c => c.ImgUrl).NotEmpty();
         RuleFor(c => c.Description).NotEmpty();
     }

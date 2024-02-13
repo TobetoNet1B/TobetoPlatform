@@ -9,7 +9,7 @@ namespace Application.Features.Instructors.Commands.Update;
 public class UpdateInstructorCommand : IRequest<UpdatedInstructorResponse>
 {
     public Guid Id { get; set; }
-    public string Name { get; set; }
+    public int UserId { get; set; }
     public string? ImgUrl { get; set; }
     public string? Description { get; set; }
 

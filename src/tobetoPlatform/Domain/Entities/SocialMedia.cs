@@ -4,20 +4,16 @@ namespace Domain.Entities;
 public class SocialMedia: Entity<Guid>
 {
     public string Name { get; set; }
-    public string Icon { get; set; }
-    public string SocialMediaUrl { get; set; }
-    public Guid StudentId { get; set; }
-    public virtual Student Student { get; set; } = null!;
+    public string? IconUrl { get; set; }
+    public virtual ICollection<StudentSocialMedia> StudentSocialMedias { get; set; } = null!;
 
     public SocialMedia()
     {
         
     }
-    public SocialMedia(Guid id,string name, string icon, string socialMediaUrl, Guid studentId) : base(id)
+    public SocialMedia(Guid id,string name, string? iconUrl) : base(id)
     {
         Name = name;
-        Icon = icon;
-        SocialMediaUrl = socialMediaUrl;
-        StudentId = studentId;
+        IconUrl = iconUrl;
     }
 }

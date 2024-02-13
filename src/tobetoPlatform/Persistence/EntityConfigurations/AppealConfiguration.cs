@@ -17,7 +17,7 @@ public class AppealConfiguration : IEntityTypeConfiguration<Appeal>
         builder.Property(a => a.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(a => a.DeletedDate).HasColumnName("DeletedDate");
 
-        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Appeals_Name").IsUnique();
+        
         builder.HasMany(b => b.StudentAppeals);
 
         builder.HasQueryFilter(a => !a.DeletedDate.HasValue);

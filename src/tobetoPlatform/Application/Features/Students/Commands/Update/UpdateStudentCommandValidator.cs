@@ -12,5 +12,6 @@ public class UpdateStudentCommandValidator : AbstractValidator<UpdateStudentComm
         RuleFor(c => c.PhoneNumber).NotEmpty();
         RuleFor(c => c.About).NotEmpty();
         RuleFor(c => c.ImgUrl).NotEmpty();
+        RuleFor(c => c.UserId).NotEmpty();
     }
 }

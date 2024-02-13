@@ -10,9 +10,7 @@ public class UpdateSocialMediaCommand : IRequest<UpdatedSocialMediaResponse>
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
-    public string Icon { get; set; }
-    public string SocialMediaUrl { get; set; }
-    public Guid StudentId { get; set; }
+    public string? IconUrl { get; set; }
 
     public class UpdateSocialMediaCommandHandler : IRequestHandler<UpdateSocialMediaCommand, UpdatedSocialMediaResponse>
     {

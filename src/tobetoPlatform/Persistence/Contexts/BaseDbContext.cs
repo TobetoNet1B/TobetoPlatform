@@ -20,7 +20,7 @@ public class BaseDbContext : DbContext
     public DbSet<Announcement> Announcements { get; set; }
     public DbSet<Appeal> Appeals { get; set; }
     public DbSet<Blog> Blogs { get; set; }
-    public DbSet<Category> Categories { get; set; }
+    public DbSet<CategoryOfModuleSet> Categories { get; set; }
     public DbSet<Certificate> Certificates { get; set; }
     public DbSet<City> Cities { get; set; }
     public DbSet<Company> Companies { get; set; }
@@ -50,6 +50,13 @@ public class BaseDbContext : DbContext
     public DbSet<ModuleSet> ModuleSets { get; set; }
     public DbSet<Classroom> Classrooms { get; set; }
     public DbSet<StudentClassroom> StudentClassrooms { get; set; }
+    public DbSet<CategoryOfCourse> CategoryOfCourses { get; set; }
+    public DbSet<CategoryOfModuleSet> CategoryOfModuleSets { get; set; }
+    public DbSet<ClassroomModule> ClassroomModules { get; set; }
+    public DbSet<ModuleSetCategory> ModuleSetCategories { get; set; }
+    public DbSet<ModuleType> ModuleTypes { get; set; }
+    public DbSet<Speaker> Speakers { get; set; }
+    public DbSet<StudentSocialMedia> StudentSocialMedias { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

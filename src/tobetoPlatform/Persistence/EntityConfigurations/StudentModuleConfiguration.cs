@@ -18,8 +18,10 @@ public class StudentModuleConfiguration : IEntityTypeConfiguration<StudentModule
         builder.Property(sm => sm.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(sm => sm.DeletedDate).HasColumnName("DeletedDate");
 
-        builder.HasOne(b => b.Student);
-        builder.HasOne(b => b.ModuleSet);
+        builder.HasOne(b => b.Student).WithMany(m => m.StudentModules).HasForeignKey(sm => sm.StudentId)
+    .OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(b => b.ModuleSet).WithMany(m => m.StudentModules).HasForeignKey(sm => sm.StudentId)
+    .OnDelete(DeleteBehavior.Restrict);
 
 
         builder.HasQueryFilter(sm => !sm.DeletedDate.HasValue);

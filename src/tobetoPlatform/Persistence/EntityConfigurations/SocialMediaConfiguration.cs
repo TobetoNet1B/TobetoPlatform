@@ -12,15 +12,14 @@ public class SocialMediaConfiguration : IEntityTypeConfiguration<SocialMedia>
 
         builder.Property(sm => sm.Id).HasColumnName("Id").IsRequired();
         builder.Property(sm => sm.Name).HasColumnName("Name");
-        builder.Property(sm => sm.Icon).HasColumnName("Icon");
-        builder.Property(sm => sm.SocialMediaUrl).HasColumnName("SocialMediaUrl");
-        builder.Property(sm => sm.StudentId).HasColumnName("StudentId");
+        builder.Property(sm => sm.IconUrl).HasColumnName("IconUrl");
         builder.Property(sm => sm.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(sm => sm.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(sm => sm.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasIndex(indexExpression: b => b.Name, name: "UK_SocialMedias_Name").IsUnique();
-        builder.HasOne(b => b.Student);
+
+        builder.HasMany(b => b.StudentSocialMedias);
 
         builder.HasQueryFilter(sm => !sm.DeletedDate.HasValue);
     }

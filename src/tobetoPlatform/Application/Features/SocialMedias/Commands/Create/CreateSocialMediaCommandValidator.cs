@@ -7,8 +7,6 @@ public class CreateSocialMediaCommandValidator : AbstractValidator<CreateSocialM
     public CreateSocialMediaCommandValidator()
     {
         RuleFor(c => c.Name).NotEmpty();
-        RuleFor(c => c.Icon).NotEmpty();
-        RuleFor(c => c.SocialMediaUrl).NotEmpty();
-        RuleFor(c => c.StudentId).NotEmpty();
+        RuleFor(c => c.IconUrl).NotEmpty();
     }
 }

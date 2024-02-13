@@ -10,4 +10,5 @@ public class UpdatedStudentResponse : IResponse
     public string? PhoneNumber { get; set; }
     public string? About { get; set; }
     public string? ImgUrl { get; set; }
+    public int UserId { get; set; }
 }

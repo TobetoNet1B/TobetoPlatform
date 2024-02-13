@@ -6,5 +6,5 @@ public class UpdatedCourseCategoryResponse : IResponse
 {
     public Guid Id { get; set; }
     public Guid CourseId { get; set; }
-    public Guid CategoryId { get; set; }
+    public Guid CategoryOfCourseId { get; set; }
 }

@@ -33,10 +33,10 @@ public class AbilityBusinessRules : BaseBusinessRules
         await AbilityShouldExistWhenSelected(ability);
     }
 
-    public async Task AbilityNameCanNotBeDuplicationWhenInserted(string name)
+    public async Task AbilityNameCanNotBeDuplicationWhenInserted(Guid id, Ability ability)
     {
-        IPaginate<Ability> result = await _abilityRepository.GetListAsync(c => c.Name == name);
-        if (result.Items.Any())
+        IPaginate<Ability> result = await _abilityRepository.GetListAsync(s => s.StudentId == id);
+        if (result.Items.Any(c => c.Name == ability.Name))
             throw new Exception(AbilitiesBusinessMessages.AbilityNameExists);
     }
 }

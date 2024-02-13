@@ -8,6 +8,6 @@ public class UpdateCourseCategoryCommandValidator : AbstractValidator<UpdateCour
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.CourseId).NotEmpty();
-        RuleFor(c => c.CategoryId).NotEmpty();
+        RuleFor(c => c.CategoryOfCourseId).NotEmpty();
     }
 }

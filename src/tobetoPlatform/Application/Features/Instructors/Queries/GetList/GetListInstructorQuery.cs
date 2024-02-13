@@ -5,7 +5,6 @@ using Core.Application.Requests;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Instructors.Queries.GetList;
 
@@ -26,8 +25,7 @@ public class GetListInstructorQuery : IRequest<GetListResponse<GetListInstructor
 
         public async Task<GetListResponse<GetListInstructorListItemDto>> Handle(GetListInstructorQuery request, CancellationToken cancellationToken)
         {
-            IPaginate<Instructor> instructors = await _instructorRepository.GetListAsync(include:
-                m=>m.Include(u=>u.User),
+            IPaginate<Instructor> instructors = await _instructorRepository.GetListAsync(
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize, 
                 cancellationToken: cancellationToken

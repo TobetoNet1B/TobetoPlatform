@@ -11,7 +11,7 @@ public class UpdateSurveyCommand : IRequest<UpdatedSurveyResponse>
     public Guid Id { get; set; }
     public string? Title { get; set; }
     public string? Description { get; set; }
-    public string SurveyUrl { get; set; }
+    public string? SurveyUrl { get; set; }
     public Guid StudentId { get; set; }
 
     public class UpdateSurveyCommandHandler : IRequestHandler<UpdateSurveyCommand, UpdatedSurveyResponse>

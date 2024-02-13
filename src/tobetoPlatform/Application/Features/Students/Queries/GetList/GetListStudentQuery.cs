@@ -27,9 +27,9 @@ public class GetListStudentQuery : IRequest<GetListResponse<GetListStudentListIt
         public async Task<GetListResponse<GetListStudentListItemDto>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
         {
             IPaginate<Student> students = await _studentRepository.GetListAsync(include:
-                m=>m.Include(u=>u.User),
+                m => m.Include(u => u.User),
                 index: request.PageRequest.PageIndex,
-                size: request.PageRequest.PageSize, 
+                size: request.PageRequest.PageSize,
                 cancellationToken: cancellationToken
             );
 
@@ -38,4 +38,3 @@ public class GetListStudentQuery : IRequest<GetListResponse<GetListStudentListIt
         }
     }
 }
-

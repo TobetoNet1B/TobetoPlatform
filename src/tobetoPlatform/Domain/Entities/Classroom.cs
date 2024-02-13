@@ -6,6 +6,7 @@ public class Classroom : Entity<Guid>
     public string Name { get; set; }
     public int ClassSize { get; set; }
     public virtual ICollection<StudentClassroom> StudentClassrooms { get; set; } = null!;
+    public virtual ICollection<ClassroomModule> ClassroomModules { get; set; } = null!;
 
     public Classroom()
     {

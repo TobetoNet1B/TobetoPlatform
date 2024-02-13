@@ -7,12 +7,5 @@ public class CreateCourseCommandValidator : AbstractValidator<CreateCourseComman
     public CreateCourseCommandValidator()
     {
         RuleFor(c => c.Name).NotEmpty();
-        RuleFor(c => c.CourseTitle).NotEmpty();
-        RuleFor(c => c.Description).NotEmpty();
-        RuleFor(c => c.CourseLevel).NotEmpty();
-        RuleFor(c => c.StartDate).NotEmpty();
-        RuleFor(c => c.EndDate).NotEmpty();
-        RuleFor(c => c.EstimatedTime).NotEmpty();
-        RuleFor(c => c.ActivityStatus).NotEmpty();
     }
 }

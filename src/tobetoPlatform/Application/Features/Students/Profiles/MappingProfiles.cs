@@ -25,7 +25,6 @@ public class MappingProfiles : Profile
         CreateMap<Student, GetByIdStudentResponse>().ReverseMap();
         CreateMap<Student, GetListStudentListItemDto>().ReverseMap();
         CreateMap<IPaginate<Student>, GetListResponse<GetListStudentListItemDto>>().ReverseMap();
-        
 
         CreateMap<UserAddDto, CreateStudentCommand>().ReverseMap();
         CreateMap<User, UserDto>();
@@ -38,7 +37,9 @@ public class MappingProfiles : Profile
             .ForMember(dest => dest.StudentName, opt => opt.MapFrom(src => src.Student.User.FirstName))
             .ForMember(dest => dest.ClassName, opt => opt.MapFrom(src => src.Classroom.Name))
             .ForMember(dest => dest.ClassSize, opt => opt.MapFrom(src => src.Classroom.ClassSize));
-        CreateMap<SocialMedia, SocialMediasDto>();
+        CreateMap<StudentSocialMedia, SocialMediasDto>()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.SocialMedia.Name))
+            .ForMember(dest => dest.Icon, opt => opt.MapFrom(src => src.SocialMedia.IconUrl));
         CreateMap<Education, EducationsDto>();
         CreateMap<Certificate, CertificatesDto>();
         CreateMap<Ability, AbilitiesDto>();

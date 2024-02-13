@@ -18,12 +18,14 @@ public class LessonConfiguration : IEntityTypeConfiguration<Lesson>
         builder.Property(l => l.LessonType).HasColumnName("LessonType");
         builder.Property(l => l.Duration).HasColumnName("Duration");
         builder.Property(l => l.CourseId).HasColumnName("CourseId");
+        builder.Property(l => l.SpeakerId).HasColumnName("SpeakerId");
         builder.Property(l => l.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(l => l.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(l => l.DeletedDate).HasColumnName("DeletedDate");
 
-        builder.HasIndex(indexExpression: b => b.Name, name: "UK_Lessons_Name").IsUnique();
+
         builder.HasOne(b => b.Course);
+        builder.HasOne(b => b.Speaker);
         builder.HasMany(b => b.LessonTags);
 
         builder.HasQueryFilter(l => !l.DeletedDate.HasValue);

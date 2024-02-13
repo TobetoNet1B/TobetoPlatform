@@ -1,4 +1,5 @@
-﻿using Application.Features.Auth.Rules;
+﻿using Application.Features.Auth.Commands.EnableEmailAuthenticator;
+using Application.Features.Auth.Rules;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
 using Application.Services.Students;
@@ -34,14 +35,17 @@ public class RegisterCommand : IRequest<RegisteredResponse>
         private readonly IUserRepository _userRepository;
         private readonly IAuthService _authService;
         private readonly AuthBusinessRules _authBusinessRules;
+        private readonly IMediator _mediator;
 
-        public RegisterCommandHandler(IStudentsService studentsManager, IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules)
+        public RegisterCommandHandler(IStudentsService studentsManager, IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IMediator mediator)
         {
             _studentsManager = studentsManager;
             _userRepository = userRepository;
             _authService = authService;
             _authBusinessRules = authBusinessRules;
+            _mediator = mediator;
         }
+
 
         public async Task<RegisteredResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
         {
@@ -75,6 +79,15 @@ public class RegisterCommand : IRequest<RegisteredResponse>
 
             Core.Security.Entities.RefreshToken createdRefreshToken = await _authService.CreateRefreshToken(createdUser, request.IpAddress);
             Core.Security.Entities.RefreshToken addedRefreshToken = await _authService.AddRefreshToken(createdRefreshToken);
+
+
+
+
+            //var enableEmailCommand = new EnableEmailAuthenticatorCommand(createdUser.Id, "http://localhost:5278");
+            //await _mediator.Send(enableEmailCommand);
+
+
+
 
             RegisteredResponse registeredResponse = new() { AccessToken = createdAccessToken, RefreshToken = addedRefreshToken };
             return registeredResponse;

@@ -8,10 +8,9 @@ namespace Application.Features.Instructors.Commands.Create;
 
 public class CreateInstructorCommand : IRequest<CreatedInstructorResponse>
 {
+    public int UserId { get; set; }
     public string? ImgUrl { get; set; }
     public string? Description { get; set; }
-
-    public int? UserId { get; set; }
 
     public class CreateInstructorCommandHandler : IRequestHandler<CreateInstructorCommand, CreatedInstructorResponse>
     {

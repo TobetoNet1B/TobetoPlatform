@@ -20,7 +20,6 @@ using Application.Services.Addresses;
 using Application.Services.Announcements;
 using Application.Services.Appeals;
 using Application.Services.Blogs;
-using Application.Services.Categories;
 using Application.Services.Certificates;
 using Application.Services.Cities;
 using Application.Services.Companies;
@@ -39,6 +38,13 @@ using Application.Services.Students;
 using Application.Services.ModuleSets;
 using Application.Services.Classrooms;
 using Application.Services.StudentClassrooms;
+using Application.Services.CategoryOfCourses;
+using Application.Services.CategoryOfModuleSets;
+using Application.Services.ClassroomModules;
+using Application.Services.ModuleSetCategories;
+using Application.Services.ModuleTypes;
+using Application.Services.Speakers;
+using Application.Services.StudentSocialMedias;
 
 using Application.Services.Instructors;
 using Application.Services.Lessons;
@@ -85,7 +91,6 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAnnouncementsService, AnnouncementsManager>();
         services.AddScoped<IAppealsService, AppealsManager>();
         services.AddScoped<IBlogsService, BlogsManager>();
-        services.AddScoped<ICategoriesService, CategoriesManager>();
         services.AddScoped<ICertificatesService, CertificatesManager>();
         services.AddScoped<ICitiesService, CitiesManager>();
         services.AddScoped<ICompaniesService, CompaniesManager>();
@@ -115,6 +120,13 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IModuleSetsService, ModuleSetsManager>();
         services.AddScoped<IClassroomsService, ClassroomsManager>();
         services.AddScoped<IStudentClassroomsService, StudentClassroomsManager>();
+        services.AddScoped<ICategoryOfCoursesService, CategoryOfCoursesManager>();
+        services.AddScoped<ICategoryOfModuleSetsService, CategoryOfModuleSetsManager>();
+        services.AddScoped<IClassroomModulesService, ClassroomModulesManager>();
+        services.AddScoped<IModuleSetCategoriesService, ModuleSetCategoriesManager>();
+        services.AddScoped<IModuleTypesService, ModuleTypesManager>();
+        services.AddScoped<ISpeakersService, SpeakersManager>();
+        services.AddScoped<IStudentSocialMediasService, StudentSocialMediasManager>();
         return services;
     }
 

@@ -7,7 +7,7 @@ public class Certificate: Entity<Guid>
     public string? FileType { get; set; }
     public string? FileUrl { get; set; }
     public Guid StudentId { get; set; }
-    public virtual Student? Student { get; set; } = null!;
+    public virtual Student Student { get; set; } = null!;
 
     public Certificate()
     {
