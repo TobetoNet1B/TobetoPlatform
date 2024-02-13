@@ -400,4 +400,11 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+
+
 src/tobetoPlatform/Persistence/Migrations/*
+appsettings*.json
+
+
