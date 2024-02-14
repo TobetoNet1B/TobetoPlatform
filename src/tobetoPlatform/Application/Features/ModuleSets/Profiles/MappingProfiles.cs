@@ -23,5 +23,14 @@ public class MappingProfiles : Profile
         CreateMap<ModuleSet, GetByIdModuleSetResponse>().ReverseMap();
         CreateMap<ModuleSet, GetListModuleSetListItemDto>().ReverseMap();
         CreateMap<IPaginate<ModuleSet>, GetListResponse<GetListModuleSetListItemDto>>().ReverseMap();
+
+
+        CreateMap<Company, CompanyDto>().ReverseMap();
+        CreateMap<CourseModule, CourseModuleDto>()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Course.Name));
+        //.ForMember(dest => dest.Lessons, opt => opt.MapFrom(src => src.Course.Lessons));
+        CreateMap<StudentModule, StudentModuleDto>().ReverseMap();
+        CreateMap<ModuleSetCategory, ModuleSetCategoryDto>()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.CategoryOfModuleSet.Name));
     }
 }
