@@ -20,7 +20,7 @@ public class StudentModuleConfiguration : IEntityTypeConfiguration<StudentModule
 
         builder.HasOne(b => b.Student).WithMany(m => m.StudentModules).HasForeignKey(sm => sm.StudentId)
     .OnDelete(DeleteBehavior.Restrict);
-        builder.HasOne(b => b.ModuleSet).WithMany(m => m.StudentModules).HasForeignKey(sm => sm.StudentId)
+        builder.HasOne(b => b.ModuleSet).WithMany(m => m.StudentModules).HasForeignKey(sm => sm.ModuleSetId)
     .OnDelete(DeleteBehavior.Restrict);
 
 
