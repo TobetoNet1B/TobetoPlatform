@@ -7,6 +7,7 @@ using Core.Persistence.Paging;
 using Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Application.Features.StudentModules.Queries.GetById;
 
@@ -35,23 +36,31 @@ public class GetByIdStudentModuleQuery : IRequest<GetByIdStudentModuleResponse>
             //GetByIdStudentModuleResponse response = _mapper.Map<GetByIdStudentModuleResponse>(studentModule);
             //return response;
             IPaginate<StudentModule> studentModules = await _studentModuleRepository.GetListAsync(
-     predicate: sm => sm.StudentId == request.Id,
-     include: m => m.Include(s => s.Student)
-                     .Include(s => s.ModuleSet)
-                         .ThenInclude(ms => ms.Company),
-     cancellationToken: cancellationToken);
+                        predicate: sm => sm.StudentId == request.Id,
+                        include: m => m.Include(s => s.Student).ThenInclude(s => s.StudentClassrooms)
+                                      .Include(s => s.ModuleSet).ThenInclude(ms => ms.Company)
+                                      .Include(s => s.ModuleSet).ThenInclude(ms => ms.ClassroomModules),
+                        cancellationToken: cancellationToken);
 
 
 
             GetByIdStudentModuleResponse response = new GetByIdStudentModuleResponse
             {
                 Student = _mapper.Map<StudentDto>(studentModules.Items.FirstOrDefault()?.Student),
-                ModuleSets = studentModules.Items.Select(se => _mapper.Map<ModuleSetDto>(se.ModuleSet)).ToList(),
-                TimeSpent = studentModules.Items.FirstOrDefault()?.TimeSpent
+                ModuleSets = studentModules.Items.Select(se =>
+                {
+                    var moduleSetDto = _mapper.Map<ModuleSetDto>(se.ModuleSet);
+                    moduleSetDto.ClassroomModules = se.ModuleSet.ClassroomModules
+                                                       .Where(cm => se.Student.StudentClassrooms
+                                                       .Any(sc => sc.ClassroomId == cm.Id && sc.StudentId == request.Id))
+                                                       .Select(cm => _mapper.Map<ClassroomDto>(cm)).ToList();
+                    return moduleSetDto;
+                }).ToList(),
+                TimeSpent = studentModules.Items.FirstOrDefault()?.TimeSpent,
             };
 
 
             return response;
         }
-    }
+}
 }
