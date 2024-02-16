@@ -1857,8 +1857,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 41, 110, 78, 221, 112, 172, 143, 126, 32, 36, 61, 108, 208, 56, 154, 147, 156, 159, 47, 253, 0, 213, 181, 93, 226, 110, 75, 49, 176, 36, 207, 21, 192, 211, 115, 51, 45, 234, 248, 101, 230, 21, 105, 103, 200, 212, 149, 126, 40, 229, 186, 226, 218, 30, 230, 248, 148, 206, 115, 74, 251, 189, 180, 253 },
-                            PasswordSalt = new byte[] { 38, 241, 83, 160, 166, 8, 1, 154, 136, 185, 154, 236, 32, 29, 124, 43, 120, 69, 22, 219, 187, 168, 231, 115, 142, 129, 246, 119, 131, 104, 9, 142, 4, 231, 76, 234, 105, 126, 28, 221, 174, 167, 59, 85, 143, 35, 139, 232, 74, 123, 187, 23, 83, 123, 122, 100, 178, 121, 188, 185, 203, 65, 177, 116, 118, 87, 239, 60, 17, 9, 93, 18, 172, 192, 194, 166, 9, 157, 29, 1, 67, 72, 147, 81, 253, 214, 120, 52, 219, 20, 36, 219, 165, 80, 0, 106, 134, 253, 126, 150, 16, 112, 197, 2, 91, 219, 244, 218, 135, 137, 154, 42, 115, 115, 97, 69, 9, 10, 126, 179, 229, 53, 207, 105, 130, 35, 191, 186 },
+                            PasswordHash = new byte[] { 162, 114, 68, 81, 76, 10, 38, 30, 44, 104, 66, 82, 113, 141, 128, 137, 8, 135, 1, 25, 143, 90, 50, 215, 240, 170, 35, 18, 189, 247, 158, 76, 172, 112, 7, 134, 74, 12, 214, 32, 167, 187, 56, 236, 153, 44, 212, 229, 10, 123, 80, 52, 179, 83, 246, 97, 212, 110, 108, 214, 232, 148, 198, 231 },
+                            PasswordSalt = new byte[] { 163, 148, 119, 242, 146, 186, 218, 158, 209, 125, 200, 149, 241, 147, 29, 232, 245, 39, 85, 65, 83, 192, 81, 191, 124, 107, 2, 121, 36, 231, 243, 182, 174, 158, 51, 7, 70, 122, 213, 180, 63, 218, 22, 68, 4, 144, 108, 174, 64, 180, 72, 160, 229, 33, 191, 87, 116, 77, 233, 178, 135, 60, 145, 237, 128, 197, 69, 136, 0, 168, 1, 242, 222, 162, 171, 148, 131, 47, 16, 19, 173, 230, 136, 135, 108, 138, 191, 17, 203, 113, 215, 28, 113, 17, 95, 193, 173, 12, 132, 207, 66, 178, 124, 169, 160, 53, 198, 98, 76, 192, 109, 194, 112, 212, 19, 78, 73, 237, 173, 15, 233, 175, 230, 195, 231, 180, 91, 104 },
                             Status = true
                         });
                 });
@@ -2853,7 +2853,6 @@ namespace Persistence.Migrations
                         .HasColumnName("Id");
 
                     b.Property<Guid?>("CourseId")
-                        .IsRequired()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CourseId");
 
@@ -2892,7 +2891,6 @@ namespace Persistence.Migrations
                         .HasColumnName("Name");
 
                     b.Property<Guid?>("SpeakerId")
-                        .IsRequired()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("SpeakerId");
 
@@ -3483,6 +3481,8 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ModuleSetId");
+
                     b.HasIndex("StudentId");
 
                     b.ToTable("StudentModules", (string)null);
@@ -3846,15 +3846,11 @@ namespace Persistence.Migrations
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany("Lessons")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CourseId");
 
                     b.HasOne("Domain.Entities.Speaker", "Speaker")
                         .WithMany("Lessons")
-                        .HasForeignKey("SpeakerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SpeakerId");
 
                     b.Navigation("Course");
 
@@ -4045,7 +4041,7 @@ namespace Persistence.Migrations
                 {
                     b.HasOne("Domain.Entities.ModuleSet", "ModuleSet")
                         .WithMany("StudentModules")
-                        .HasForeignKey("StudentId")
+                        .HasForeignKey("ModuleSetId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

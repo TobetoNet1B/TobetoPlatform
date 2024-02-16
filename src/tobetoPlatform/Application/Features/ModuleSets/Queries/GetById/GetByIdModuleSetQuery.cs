@@ -44,6 +44,7 @@ public class GetByIdModuleSetQuery : IRequest<GetByIdModuleSetResponse>
 
             response.ModuleSetCategorys = moduleSet.ModuleSetCategorys.Select(ms => _mapper.Map<ModuleSetCategoryDto>(ms)).ToList();
             return response;
+
         }
     }
 }
