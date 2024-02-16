@@ -29,12 +29,9 @@ public class GetByIdModuleSetQuery : IRequest<GetByIdModuleSetResponse>
         {
             ModuleSet? moduleSet = await _moduleSetRepository.GetAsync(
               include: m => m.Include(s => s.Company)
-                            //.Include(s => s.CourseModules).ThenInclude(s => s.Course).ThenInclude(s=>s.Lessons)
                             .Include(s => s.StudentModules)
-                            .ThenInclude(s=>s.Student)
-                            .Include(s => s.ModuleSetCategorys)
-                            .ThenInclude(s => s.CategoryOfModuleSet)
-                            .Include(s => s.CourseModules).ThenInclude(s => s.Course.Lessons)
+                            .Include(s => s.ModuleSetCategorys).ThenInclude(s=>s.CategoryOfModuleSet)
+                            .Include(s => s.CourseModules).ThenInclude(s => s.Course).ThenInclude(s=>s.Lessons)
             , predicate: ms => ms.Id == request.Id, cancellationToken: cancellationToken);
             await _moduleSetBusinessRules.ModuleSetShouldExistWhenSelected(moduleSet);
 
