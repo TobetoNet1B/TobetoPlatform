@@ -402,9 +402,9 @@ FodyWeavers.xsd
 *.sln.iml
 
 
-
-
+# Ours
 src/tobetoPlatform/Persistence/Migrations/*
+
 appsettings*.json
-
-
+/src/tobetoPlatform/WebAPI/appsettings.json
+/src/tobetoPlatform/WebAPI/appsettings.Development.json
