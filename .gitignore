@@ -404,6 +404,7 @@ FodyWeavers.xsd
 
 # Ours
 src/tobetoPlatform/Persistence/Migrations/*
+src/tobetoPlatform/Persistence/Migrations/BaseDbContextModelSnapshot.cs
 
 appsettings*.json
 /src/tobetoPlatform/WebAPI/appsettings.json
