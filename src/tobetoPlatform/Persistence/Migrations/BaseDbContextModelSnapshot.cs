@@ -1857,8 +1857,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 162, 114, 68, 81, 76, 10, 38, 30, 44, 104, 66, 82, 113, 141, 128, 137, 8, 135, 1, 25, 143, 90, 50, 215, 240, 170, 35, 18, 189, 247, 158, 76, 172, 112, 7, 134, 74, 12, 214, 32, 167, 187, 56, 236, 153, 44, 212, 229, 10, 123, 80, 52, 179, 83, 246, 97, 212, 110, 108, 214, 232, 148, 198, 231 },
-                            PasswordSalt = new byte[] { 163, 148, 119, 242, 146, 186, 218, 158, 209, 125, 200, 149, 241, 147, 29, 232, 245, 39, 85, 65, 83, 192, 81, 191, 124, 107, 2, 121, 36, 231, 243, 182, 174, 158, 51, 7, 70, 122, 213, 180, 63, 218, 22, 68, 4, 144, 108, 174, 64, 180, 72, 160, 229, 33, 191, 87, 116, 77, 233, 178, 135, 60, 145, 237, 128, 197, 69, 136, 0, 168, 1, 242, 222, 162, 171, 148, 131, 47, 16, 19, 173, 230, 136, 135, 108, 138, 191, 17, 203, 113, 215, 28, 113, 17, 95, 193, 173, 12, 132, 207, 66, 178, 124, 169, 160, 53, 198, 98, 76, 192, 109, 194, 112, 212, 19, 78, 73, 237, 173, 15, 233, 175, 230, 195, 231, 180, 91, 104 },
+                            PasswordHash = new byte[] { 225, 2, 192, 101, 171, 22, 238, 11, 65, 43, 186, 11, 26, 65, 198, 98, 127, 114, 226, 214, 155, 80, 189, 23, 87, 1, 130, 224, 53, 149, 117, 235, 11, 74, 97, 80, 5, 53, 90, 66, 30, 212, 234, 90, 200, 159, 22, 170, 247, 240, 132, 132, 115, 161, 93, 23, 88, 91, 139, 223, 223, 36, 36, 167 },
+                            PasswordSalt = new byte[] { 17, 130, 98, 27, 127, 83, 20, 11, 89, 154, 232, 25, 91, 122, 118, 170, 206, 225, 110, 158, 122, 97, 128, 242, 59, 168, 240, 148, 128, 147, 165, 143, 17, 69, 21, 24, 97, 183, 75, 217, 106, 189, 94, 212, 208, 168, 109, 127, 84, 154, 173, 158, 163, 12, 74, 136, 188, 49, 251, 141, 99, 197, 126, 100, 200, 150, 20, 92, 228, 154, 6, 70, 104, 54, 59, 54, 36, 19, 81, 173, 119, 62, 208, 134, 112, 212, 214, 31, 13, 8, 153, 68, 149, 154, 230, 56, 190, 189, 190, 43, 0, 13, 90, 65, 222, 102, 119, 29, 62, 14, 221, 0, 255, 192, 108, 81, 118, 166, 194, 204, 66, 127, 9, 41, 37, 146, 76, 38 },
                             Status = true
                         });
                 });
@@ -2853,6 +2853,7 @@ namespace Persistence.Migrations
                         .HasColumnName("Id");
 
                     b.Property<Guid?>("CourseId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CourseId");
 
@@ -2891,6 +2892,7 @@ namespace Persistence.Migrations
                         .HasColumnName("Name");
 
                     b.Property<Guid?>("SpeakerId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("SpeakerId");
 
@@ -3846,11 +3848,15 @@ namespace Persistence.Migrations
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany("Lessons")
-                        .HasForeignKey("CourseId");
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Domain.Entities.Speaker", "Speaker")
                         .WithMany("Lessons")
-                        .HasForeignKey("SpeakerId");
+                        .HasForeignKey("SpeakerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Course");
 

@@ -28,6 +28,11 @@ public class MappingProfiles : Profile
 
         CreateMap<Student, StudentDto>().ReverseMap();
         CreateMap<ModuleSet, ModuleSetDto>().ReverseMap();
-        CreateMap<ClassroomModule, ClassroomDto>().ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ClassroomId));
+        CreateMap<ClassroomModule, ClassroomDto>()
+       .ForMember(dest => dest.ClassroomId, opt => opt.MapFrom(src => src.Classroom.Id))
+       .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Classroom.Name))
+       // Di?er alanlar burada eklenebilir...
+       .ForMember(dest => dest.ClassroomStartDate, opt => opt.MapFrom(src => src.ClassroomStartDate))
+       .ForMember(dest => dest.Module, opt => opt.MapFrom(src => src.ModuleSet));
     }
 }
