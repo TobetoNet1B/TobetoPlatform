@@ -34,8 +34,6 @@ public class GetByIdStudentClassroomQuery : IRequest<GetByIdStudentClassroomResp
        include: m => m.Include(s => s.Student)
                      .Include(s => s.Classroom).ThenInclude(c => c.ClassroomModules).ThenInclude(cm => cm.ModuleSet).ThenInclude(cm => cm.Company),
        cancellationToken: cancellationToken);
-
-            // Öğrenci ve sınıf bilgilerini doldur
             GetByIdStudentClassroomResponse response = new GetByIdStudentClassroomResponse
             {
                 Student = _mapper.Map<StudentDto>(studentClassroom.Items.FirstOrDefault()?.Student),
