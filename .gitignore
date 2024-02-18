@@ -408,3 +408,4 @@ src/tobetoPlatform/Persistence/Migrations/*
 appsettings*.json
 
 
+/src/tobetoPlatform/Persistence/Migrations/BaseDbContextModelSnapshot.cs
