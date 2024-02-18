@@ -1,4 +1,5 @@
 using Application;
+using Application.Features.Certificates.Commands.Delete;
 using Core.CrossCuttingConcerns.Exceptions.Extensions;
 using Core.Mailing;
 using Core.Mailing.MailKitImplementations;
@@ -97,6 +98,7 @@ builder.Services.AddCors(options =>
                    .AllowAnyMethod();
         });
 });
+builder.Services.AddScoped<CloudinaryService>(); //CloudinaryService
 
 WebApplication app = builder.Build();
 
