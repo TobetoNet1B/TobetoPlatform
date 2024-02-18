@@ -23,5 +23,10 @@ public class MappingProfiles : Profile
         CreateMap<Address, GetByIdAddressResponse>().ReverseMap();
         CreateMap<Address, GetListAddressListItemDto>().ReverseMap();
         CreateMap<IPaginate<Address>, GetListResponse<GetListAddressListItemDto>>().ReverseMap();
+
+        CreateMap<Address, GetByIdAddressResponse>()
+            .ForMember(dest => dest.CityName, opt => opt.MapFrom(src => src.City.Name))
+            .ForMember(dest => dest.CountryName, opt => opt.MapFrom(src => src.Country.Name))
+            .ForMember(dest => dest.DistrictName, opt => opt.MapFrom(src => src.District.Name));
     }
 }

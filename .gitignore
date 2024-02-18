@@ -402,10 +402,10 @@ FodyWeavers.xsd
 *.sln.iml
 
 
-
-
+# Ours
 src/tobetoPlatform/Persistence/Migrations/*
+src/tobetoPlatform/Persistence/Migrations/BaseDbContextModelSnapshot.cs
+
 appsettings*.json
-
-
-/src/tobetoPlatform/Persistence/Migrations/BaseDbContextModelSnapshot.cs
+/src/tobetoPlatform/WebAPI/appsettings.json
+/src/tobetoPlatform/WebAPI/appsettings.Development.json

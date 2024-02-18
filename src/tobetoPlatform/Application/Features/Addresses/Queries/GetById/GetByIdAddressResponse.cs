@@ -10,4 +10,7 @@ public class GetByIdAddressResponse : IResponse
     public Guid? DistrictId { get; set; }
     public Guid? StudentId { get; set; }
     public string? AddressDetails { get; set; }
+    public string CountryName { get; set; }
+    public string CityName { get; set; }
+    public string DistrictName { get; set; }
 }

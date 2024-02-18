@@ -12,7 +12,7 @@ public class CreateLessonCommandValidator : AbstractValidator<CreateLessonComman
         RuleFor(c => c.ImgUrl).NotEmpty();
         RuleFor(c => c.LessonType).NotEmpty();
         RuleFor(c => c.Duration).NotEmpty();
-        RuleFor(c => c.CourseId).NotEmpty();
-        RuleFor(c => c.SpeakerId).NotEmpty();
+        //RuleFor(c => c.CourseId).NotEmpty();
+        //RuleFor(c => c.SpeakerId).NotEmpty();
     }
 }

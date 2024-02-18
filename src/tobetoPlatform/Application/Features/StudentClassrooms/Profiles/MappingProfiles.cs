@@ -23,5 +23,16 @@ public class MappingProfiles : Profile
         CreateMap<StudentClassroom, GetByIdStudentClassroomResponse>().ReverseMap();
         CreateMap<StudentClassroom, GetListStudentClassroomListItemDto>().ReverseMap();
         CreateMap<IPaginate<StudentClassroom>, GetListResponse<GetListStudentClassroomListItemDto>>().ReverseMap();
+
+        CreateMap<Student, StudentDto>().ReverseMap();
+        CreateMap<Classroom, ClassroomDto>()
+      .ForMember(dest => dest.ClassroomId, opt => opt.MapFrom(src => src.Id))
+      
+      .ReverseMap();
+
+        CreateMap<ModuleSet, ModuleSetDto>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.ClassroomStartDate, opt => opt.MapFrom(src => src.ClassroomModules.FirstOrDefault().ClassroomStartDate))
+            .ReverseMap();
     }
 }
