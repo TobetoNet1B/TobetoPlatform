@@ -6,6 +6,7 @@ using Application.Features.Districts.Queries.GetList;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace WebAPI.Controllers;
 
@@ -40,7 +41,7 @@ public class DistrictsController : BaseController
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById([FromRoute] Guid id)
     {
-        GetByIdDistrictResponse response = await Mediator.Send(new GetByIdDistrictQuery { Id = id });
+        List <GetByIdDistrictResponse> response = await Mediator.Send(new GetByIdDistrictQuery { Id = id });
         return Ok(response);
     }
 

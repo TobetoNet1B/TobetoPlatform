@@ -10,7 +10,7 @@ using static Application.Features.Users.Constants.UsersOperationClaims;
 
 namespace Application.Features.Users.Commands.Update;
 
-public class UpdateUserCommand : IRequest<UpdatedUserResponse>, ISecuredRequest
+public class UpdateUserCommand : IRequest<UpdatedUserResponse>/*, ISecuredRequest*/
 {
     public int Id { get; set; }
     public string FirstName { get; set; }
@@ -35,7 +35,7 @@ public class UpdateUserCommand : IRequest<UpdatedUserResponse>, ISecuredRequest
         Password = password;
     }
 
-    public string[] Roles => new[] { Admin, Write, UsersOperationClaims.Update };
+    //public string[] Roles => new[] { Admin, Write, UsersOperationClaims.Update };
 
     public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UpdatedUserResponse>
     {

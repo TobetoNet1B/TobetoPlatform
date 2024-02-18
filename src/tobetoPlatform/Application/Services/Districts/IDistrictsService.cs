@@ -19,7 +19,7 @@ public interface IDistrictsService
         Func<IQueryable<District>, IOrderedQueryable<District>>? orderBy = null,
         Func<IQueryable<District>, IIncludableQueryable<District, object>>? include = null,
         int index = 0,
-        int size = 10,
+        int size = 50,
         bool withDeleted = false,
         bool enableTracking = true,
         CancellationToken cancellationToken = default
