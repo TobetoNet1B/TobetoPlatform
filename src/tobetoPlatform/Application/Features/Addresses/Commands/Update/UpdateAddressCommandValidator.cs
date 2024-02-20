@@ -6,11 +6,11 @@ public class UpdateAddressCommandValidator : AbstractValidator<UpdateAddressComm
 {
     public UpdateAddressCommandValidator()
     {
-        RuleFor(c => c.Id).NotEmpty();
-        RuleFor(c => c.CountryId).NotEmpty();
-        RuleFor(c => c.CityId).NotEmpty();
-        RuleFor(c => c.DistrictId).NotEmpty();
+        //RuleFor(c => c.Id).NotEmpty();
+        //RuleFor(c => c.CountryId).NotEmpty();
+        //RuleFor(c => c.CityId).NotEmpty();
+        //RuleFor(c => c.DistrictId).NotEmpty();
         RuleFor(c => c.StudentId).NotEmpty();
-        RuleFor(c => c.AddressDetails).NotEmpty();
+        //RuleFor(c => c.AddressDetails).NotEmpty();
     }
 }

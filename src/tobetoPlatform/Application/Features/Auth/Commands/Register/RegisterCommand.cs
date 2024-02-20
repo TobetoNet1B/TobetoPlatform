@@ -1,5 +1,6 @@
 ﻿using Application.Features.Auth.Commands.EnableEmailAuthenticator;
 using Application.Features.Auth.Rules;
+using Application.Services.Addresses;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
 using Application.Services.Students;
@@ -32,13 +33,15 @@ public class RegisterCommand : IRequest<RegisteredResponse>
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisteredResponse>
     {
         private readonly IStudentsService _studentsManager;
+        private readonly IAddressesService _addressManager;
         private readonly IUserRepository _userRepository;
         private readonly IAuthService _authService;
         private readonly AuthBusinessRules _authBusinessRules;
         private readonly IMediator _mediator;
 
-        public RegisterCommandHandler(IStudentsService studentsManager, IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IMediator mediator)
+        public RegisterCommandHandler(IAddressesService addressesService,IStudentsService studentsManager, IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IMediator mediator)
         {
+            _addressManager = addressesService;
             _studentsManager = studentsManager;
             _userRepository = userRepository;
             _authService = authService;
@@ -74,6 +77,14 @@ public class RegisterCommand : IRequest<RegisteredResponse>
             };
 
             await _studentsManager.AddAsync(newStudent);
+
+            Address newAddress = new Address
+            {
+                StudentId = newStudent.Id,
+            };
+
+            
+            await _addressManager.AddAsync(newAddress);
 
             AccessToken createdAccessToken = await _authService.CreateAccessToken(createdUser);
 
