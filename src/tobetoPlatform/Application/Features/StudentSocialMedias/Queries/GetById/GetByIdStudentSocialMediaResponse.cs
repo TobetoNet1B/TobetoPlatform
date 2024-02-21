@@ -4,8 +4,9 @@ namespace Application.Features.StudentSocialMedias.Queries.GetById;
 
 public class GetByIdStudentSocialMediaResponse : IResponse
 {
-    public Guid Id { get; set; }
+
     public Guid StudentId { get; set; }
-    public Guid SocialMediaId { get; set; }
-    public string? SocialMediaUrl { get; set; }
+    //public Guid SocialMediaId { get; set; }
+
+    public List<SocialMediaDto> SocialMedia { get; set; }=new List<SocialMediaDto>();
 }
