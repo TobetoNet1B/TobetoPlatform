@@ -10,8 +10,8 @@ public class CreateEducationCommandValidator : AbstractValidator<CreateEducation
         RuleFor(c => c.Department).NotEmpty();
         RuleFor(c => c.Graduation).NotEmpty();
         RuleFor(c => c.StartDate).NotEmpty();
-        RuleFor(c => c.EndDate).NotEmpty();
-        RuleFor(c => c.IsContinueUniversity).NotEmpty();
+        //RuleFor(c => c.EndDate).NotEmpty();
+        //RuleFor(c => c.IsContinueUniversity).NotEmpty();
         RuleFor(c => c.StudentId).NotEmpty();
     }
 }
