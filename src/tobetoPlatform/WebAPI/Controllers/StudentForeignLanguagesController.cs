@@ -6,6 +6,7 @@ using Application.Features.StudentForeignLanguages.Queries.GetList;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace WebAPI.Controllers;
 
@@ -40,7 +41,7 @@ public class StudentForeignLanguagesController : BaseController
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById([FromRoute] Guid id)
     {
-        GetByIdStudentForeignLanguageResponse response = await Mediator.Send(new GetByIdStudentForeignLanguageQuery { Id = id });
+        List<GetByIdStudentForeignLanguageResponse> response = await Mediator.Send(new GetByIdStudentForeignLanguageQuery { Id = id });
         return Ok(response);
     }
 
