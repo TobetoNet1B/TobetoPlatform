@@ -7,6 +7,7 @@ using AutoMapper;
 using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
+using Application.Features.StudentSocialMedias.Queries.GetById;
 
 namespace Application.Features.Experiences.Profiles;
 
@@ -23,5 +24,11 @@ public class MappingProfiles : Profile
         CreateMap<Experience, GetByIdExperienceResponse>().ReverseMap();
         CreateMap<Experience, GetListExperienceListItemDto>().ReverseMap();
         CreateMap<IPaginate<Experience>, GetListResponse<GetListExperienceListItemDto>>().ReverseMap();
+
+        CreateMap<City, CityDto>()
+           .ForMember(desc => desc.CityName, opt => opt.MapFrom(src => src.Name))
+           
+           .ReverseMap();
+        ;
     }
 }

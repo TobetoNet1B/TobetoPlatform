@@ -8,8 +8,8 @@ public class Experience : Entity<Guid>
     public string Sector { get; set;}
     public Guid CityId { get; set;}
     public DateTime StartDate { get; set;}
-    public DateTime EndDate { get; set;}
-    public bool IsContinueJob { get; set;}
+    public DateTime? EndDate { get; set;}
+    public bool? IsContinueJob { get; set;}
     public Guid StudentId { get; set; }
     public virtual Student Student { get; set; } = null!;
     public virtual City City { get; set; } = null!;

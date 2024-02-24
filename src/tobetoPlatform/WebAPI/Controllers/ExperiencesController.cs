@@ -40,7 +40,7 @@ public class ExperiencesController : BaseController
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById([FromRoute] Guid id)
     {
-        GetByIdExperienceResponse response = await Mediator.Send(new GetByIdExperienceQuery { Id = id });
+        List<GetByIdExperienceResponse> response = await Mediator.Send(new GetByIdExperienceQuery { Id = id });
         return Ok(response);
     }
 
