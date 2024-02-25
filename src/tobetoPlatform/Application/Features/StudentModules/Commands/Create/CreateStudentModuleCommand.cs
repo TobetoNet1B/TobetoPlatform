@@ -11,6 +11,8 @@ public class CreateStudentModuleCommand : IRequest<CreatedStudentModuleResponse>
     public Guid StudentId { get; set; }
     public Guid ModuleSetId { get; set; }
     public int? TimeSpent { get; set; }
+    public bool? IsLiked { get; set; }
+    public bool? IsFav { get; set; }
 
     public class CreateStudentModuleCommandHandler : IRequestHandler<CreateStudentModuleCommand, CreatedStudentModuleResponse>
     {

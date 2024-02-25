@@ -45,6 +45,7 @@ using Application.Services.ModuleSetCategories;
 using Application.Services.ModuleTypes;
 using Application.Services.Speakers;
 using Application.Services.StudentSocialMedias;
+using Application.Services.StudentLessons;
 
 using Application.Services.Instructors;
 using Application.Services.Lessons;
@@ -127,6 +128,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IModuleTypesService, ModuleTypesManager>();
         services.AddScoped<ISpeakersService, SpeakersManager>();
         services.AddScoped<IStudentSocialMediasService, StudentSocialMediasManager>();
+        services.AddScoped<IStudentLessonsService, StudentLessonsManager>();
         return services;
     }
 

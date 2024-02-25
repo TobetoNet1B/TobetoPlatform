@@ -22,6 +22,7 @@ public class Student : Entity<Guid>
     public virtual ICollection<StudentExam> StudentExams { get; set; } = null!;
     public virtual ICollection<Experience> Experiences { get; set; } = null!;
     public virtual ICollection<StudentModule> StudentModules { get; set; } = null!;
+    public virtual ICollection<StudentLesson> StudentLessons { get; set; } = null!;
     public virtual ICollection<StudentClassroom> StudentClassrooms { get; set; } = null!;
 
     public Student()

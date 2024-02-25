@@ -7,5 +7,4 @@ public class ModuleSetDto
     public string ImgUrl { get; set; }
     public string CompanyName { get; set; }
     public DateTime StartDate { get; set; }
-   public List<ClassroomDto> ClassroomModules { get; set; } = new List<ClassroomDto>();
 }

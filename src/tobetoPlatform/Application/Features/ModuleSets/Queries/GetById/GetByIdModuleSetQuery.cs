@@ -29,20 +29,22 @@ public class GetByIdModuleSetQuery : IRequest<GetByIdModuleSetResponse>
         {
             ModuleSet? moduleSet = await _moduleSetRepository.GetAsync(
               include: m => m.Include(s => s.Company)
-                            .Include(s => s.StudentModules)
-                            .Include(s => s.ModuleSetCategorys).ThenInclude(s=>s.CategoryOfModuleSet)
+                            .Include(s => s.ModuleType)
                             .Include(s => s.CourseModules).ThenInclude(s => s.Course).ThenInclude(s=>s.Lessons)
+                            .Include(s => s.StudentModules)
+                            .Include(s => s.ClassroomModules)
+                            .Include(s => s.ModuleSetCategorys).ThenInclude(s=>s.CategoryOfModuleSet)
             , predicate: ms => ms.Id == request.Id, cancellationToken: cancellationToken);
             await _moduleSetBusinessRules.ModuleSetShouldExistWhenSelected(moduleSet);
 
             GetByIdModuleSetResponse response = _mapper.Map<GetByIdModuleSetResponse>(moduleSet);
 
-            response.Company = _mapper.Map<CompanyDto>(moduleSet.Company);
-            response.CourseModules = moduleSet.CourseModules.Select(ms => _mapper.Map<CourseModuleDto>(ms)).ToList();
+            //response.Company = _mapper.Map<CompanyDto>(moduleSet.Company);
+            //response.CourseModules = moduleSet.CourseModules.Select(ms => _mapper.Map<CourseModuleDto>(ms)).ToList();
 
-            response.StudentModules = moduleSet.StudentModules.Select(ms => _mapper.Map<StudentModuleDto>(ms)).ToList();
+            //response.StudentModules = moduleSet.StudentModules.Select(ms => _mapper.Map<StudentModuleDto>(ms)).ToList();
 
-            response.ModuleSetCategorys = moduleSet.ModuleSetCategorys.Select(ms => _mapper.Map<ModuleSetCategoryDto>(ms)).ToList();
+            //response.ModuleSetCategorys = moduleSet.ModuleSetCategorys.Select(ms => _mapper.Map<ModuleSetCategoryDto>(ms)).ToList();
             return response;
 
         }

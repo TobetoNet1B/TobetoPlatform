@@ -62,6 +62,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IModuleTypeRepository, ModuleTypeRepository>();
         services.AddScoped<ISpeakerRepository, SpeakerRepository>();
         services.AddScoped<IStudentSocialMediaRepository, StudentSocialMediaRepository>();
+        services.AddScoped<IStudentLessonRepository, StudentLessonRepository>();
         return services;
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace Application.Features.ModuleSets.Queries.GetById;
 public class LessonDto
 {
+    public Guid Id { get; set; }
     public string Name { get; set; }
     public string? Description { get; set; }
     public string LessonUrl { get; set; }
