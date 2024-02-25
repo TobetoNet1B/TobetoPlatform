@@ -14,6 +14,7 @@ public class ExperienceConfiguration : IEntityTypeConfiguration<Experience>
         builder.Property(e => e.CompanyName).HasColumnName("CompanyName");
         builder.Property(e => e.Position).HasColumnName("Position");
         builder.Property(e => e.Sector).HasColumnName("Sector");
+        builder.Property(e => e.Description).HasColumnName("Description");
         builder.Property(e => e.CityId).HasColumnName("CityId");
         builder.Property(e => e.StartDate).HasColumnName("StartDate");
         builder.Property(e => e.EndDate).HasColumnName("EndDate");
@@ -22,6 +23,7 @@ public class ExperienceConfiguration : IEntityTypeConfiguration<Experience>
         builder.Property(e => e.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(e => e.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(e => e.DeletedDate).HasColumnName("DeletedDate");
+
 
         builder.HasOne(b => b.Student);
         builder.HasOne(b => b.City);
