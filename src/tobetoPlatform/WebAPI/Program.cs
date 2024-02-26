@@ -90,13 +90,9 @@ builder.Services.AddSwaggerGen(opt =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp",
-        builder =>
-        {
-            builder.WithOrigins("http://localhost:3000")
-                   .AllowAnyHeader()
-                   .AllowAnyMethod();
-        });
+    options.AddPolicy("AllowAll",
+    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
 });
 builder.Services.AddScoped<CloudinaryService>(); //CloudinaryService
 
@@ -116,7 +112,7 @@ if (app.Environment.IsProduction())
     app.ConfigureCustomExceptionMiddleware();
 
 
-app.UseCors("AllowReactApp");
+app.UseCors("AllowAll");
 
 app.UseAuthentication();
 app.UseAuthorization();
