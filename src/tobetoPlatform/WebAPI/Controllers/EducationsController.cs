@@ -40,7 +40,7 @@ public class EducationsController : BaseController
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById([FromRoute] Guid id)
     {
-        GetByIdEducationResponse response = await Mediator.Send(new GetByIdEducationQuery { Id = id });
+        List<GetByIdEducationResponse> response = await Mediator.Send(new GetByIdEducationQuery { Id = id });
         return Ok(response);
     }
 

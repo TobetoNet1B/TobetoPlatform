@@ -12,8 +12,10 @@ public class GetByIdModuleSetResponse : IResponse
     public int? EstimatedTime { get; set; }
     public string? ImgUrl { get; set; }
     public Guid? CompanyId { get; set; }
+    public ModuleTypeDto ModuleType { get; set; } = new ModuleTypeDto();
     public CompanyDto? Company { get; set; } = new CompanyDto();
     public List<CourseModuleDto>? CourseModules { get; set; } = new List<CourseModuleDto>();
     public List<StudentModuleDto>? StudentModules { get; set; } = new List<StudentModuleDto>();
+    public List<ClassroomModuleDto>? ClassroomModules { get; set; } = new List<ClassroomModuleDto>();
     public List<ModuleSetCategoryDto>? ModuleSetCategorys { get; set; } = new List<ModuleSetCategoryDto>();
 }

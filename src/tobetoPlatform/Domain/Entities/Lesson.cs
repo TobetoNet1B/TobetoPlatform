@@ -14,6 +14,7 @@ public class Lesson:Entity<Guid>
     public virtual Course Course { get; set; } = null!;
     public virtual Speaker Speaker { get; set; } = null!;
     public virtual ICollection<LessonTag> LessonTags { get; set; } = null!;
+    public virtual ICollection<StudentLesson> StudentLessons { get; set; } = null!;
 
     public Lesson()
     {

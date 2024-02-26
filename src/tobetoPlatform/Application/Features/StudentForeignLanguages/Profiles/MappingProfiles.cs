@@ -7,6 +7,7 @@ using AutoMapper;
 using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
+using Application.Features.StudentSocialMedias.Queries.GetById;
 
 namespace Application.Features.StudentForeignLanguages.Profiles;
 
@@ -23,5 +24,14 @@ public class MappingProfiles : Profile
         CreateMap<StudentForeignLanguage, GetByIdStudentForeignLanguageResponse>().ReverseMap();
         CreateMap<StudentForeignLanguage, GetListStudentForeignLanguageListItemDto>().ReverseMap();
         CreateMap<IPaginate<StudentForeignLanguage>, GetListResponse<GetListStudentForeignLanguageListItemDto>>().ReverseMap();
+
+        CreateMap<ForeignLanguage, ForeignLanguageDto>()
+           .ForMember(desc => desc.Name, opt => opt.MapFrom(src => src.Name))
+           .ReverseMap();
+        ;
+        CreateMap<ForeignLanguageLevel, ForeignLanguageLevelDto>()
+         .ForMember(desc => desc.Name, opt => opt.MapFrom(src => src.Name))
+         .ReverseMap();
+        ;
     }
 }

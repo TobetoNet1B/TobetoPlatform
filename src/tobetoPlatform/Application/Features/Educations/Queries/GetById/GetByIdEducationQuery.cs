@@ -1,3 +1,4 @@
+using Application.Features.Abilities.Queries.GetById;
 using Application.Features.Educations.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
@@ -6,11 +7,11 @@ using MediatR;
 
 namespace Application.Features.Educations.Queries.GetById;
 
-public class GetByIdEducationQuery : IRequest<GetByIdEducationResponse>
+public class GetByIdEducationQuery : IRequest<List<GetByIdEducationResponse>>
 {
     public Guid Id { get; set; }
 
-    public class GetByIdEducationQueryHandler : IRequestHandler<GetByIdEducationQuery, GetByIdEducationResponse>
+    public class GetByIdEducationQueryHandler : IRequestHandler<GetByIdEducationQuery, List<GetByIdEducationResponse>>
     {
         private readonly IMapper _mapper;
         private readonly IEducationRepository _educationRepository;
@@ -23,12 +24,18 @@ public class GetByIdEducationQuery : IRequest<GetByIdEducationResponse>
             _educationBusinessRules = educationBusinessRules;
         }
 
-        public async Task<GetByIdEducationResponse> Handle(GetByIdEducationQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetByIdEducationResponse>> Handle(GetByIdEducationQuery request, CancellationToken cancellationToken)
         {
-            Education? education = await _educationRepository.GetAsync(predicate: e => e.Id == request.Id, cancellationToken: cancellationToken);
-            await _educationBusinessRules.EducationShouldExistWhenSelected(education);
+            //Education? education = await _educationRepository.GetAsync(predicate: e => e.Id == request.Id, cancellationToken: cancellationToken);
+            //await _educationBusinessRules.EducationShouldExistWhenSelected(education);
 
-            GetByIdEducationResponse response = _mapper.Map<GetByIdEducationResponse>(education);
+            //GetByIdEducationResponse response = _mapper.Map<GetByIdEducationResponse>(education);
+            //return response;
+            var education = await _educationRepository.GetListAsync(
+           predicate: a => a.StudentId == request.Id,
+           cancellationToken: cancellationToken);
+
+            List<GetByIdEducationResponse> response = _mapper.Map<List<GetByIdEducationResponse>>(education.Items);
             return response;
         }
     }

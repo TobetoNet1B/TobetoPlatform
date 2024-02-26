@@ -7,8 +7,8 @@ public class Education: Entity<Guid>
     public string Department { get; set; }
     public string Graduation { get; set; }
     public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public bool IsContinueUniversity { get; set; }
+    public DateTime? EndDate { get; set; }
+    public bool? IsContinueUniversity { get; set; }
     public Guid StudentId { get; set; }
     public virtual Student Student { get; set; } = null!;
 

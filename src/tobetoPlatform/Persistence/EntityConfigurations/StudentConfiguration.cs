@@ -21,6 +21,7 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.Property(s => s.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(s => s.DeletedDate).HasColumnName("DeletedDate");
 
+
         builder.HasOne(b => b.User);
         builder.HasOne(b => b.Address);
         builder.HasMany(b => b.Abilities);
@@ -33,6 +34,7 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.HasMany(b => b.StudentExams);
         builder.HasMany(b => b.Experiences);
         builder.HasMany(b => b.StudentModules).WithOne(ms => ms.Student);
+        builder.HasMany(b => b.StudentLessons);
         builder.HasMany(b => b.StudentClassrooms);
 
         builder.HasQueryFilter(s => !s.DeletedDate.HasValue);

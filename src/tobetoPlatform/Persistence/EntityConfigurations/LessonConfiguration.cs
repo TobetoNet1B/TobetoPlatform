@@ -23,10 +23,11 @@ public class LessonConfiguration : IEntityTypeConfiguration<Lesson>
         builder.Property(l => l.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(l => l.DeletedDate).HasColumnName("DeletedDate");
 
-
         builder.HasOne(b => b.Course);
         builder.HasOne(b => b.Speaker);
         builder.HasMany(b => b.LessonTags);
+        builder.HasMany(b => b.StudentLessons);
+
 
         builder.HasQueryFilter(l => !l.DeletedDate.HasValue);
     }

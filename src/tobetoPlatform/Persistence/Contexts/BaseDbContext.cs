@@ -57,6 +57,7 @@ public class BaseDbContext : DbContext
     public DbSet<ModuleType> ModuleTypes { get; set; }
     public DbSet<Speaker> Speakers { get; set; }
     public DbSet<StudentSocialMedia> StudentSocialMedias { get; set; }
+    public DbSet<StudentLesson> StudentLessons { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

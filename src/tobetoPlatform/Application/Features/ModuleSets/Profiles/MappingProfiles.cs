@@ -26,10 +26,12 @@ public class MappingProfiles : Profile
 
 
         CreateMap<Company, CompanyDto>().ReverseMap();
+        CreateMap<ModuleType, ModuleTypeDto>().ReverseMap();
         CreateMap<CourseModule, CourseModuleDto>()
         .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Course.Name))
         .ForMember(dest => dest.Lessons, opt => opt.MapFrom(src => src.Course.Lessons.Select(lesson => new LessonDto
         {
+            Id = lesson.Id,
             Name = lesson.Name,
             Description = lesson.Description,
             LessonUrl = lesson.LessonUrl,
@@ -38,6 +40,7 @@ public class MappingProfiles : Profile
             Duration = lesson.Duration
         })));
         CreateMap<StudentModule, StudentModuleDto>().ReverseMap();
+        CreateMap<ClassroomModule, ClassroomModuleDto>().ReverseMap();
         CreateMap<ModuleSetCategory, ModuleSetCategoryDto>().ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.CategoryOfModuleSet.Name));
     }
 }
