@@ -9,6 +9,7 @@ using Domain.Entities;
 using Core.Persistence.Paging;
 using Application.Services.UsersService;
 using Core.Security.Entities;
+using Application.Features.Students.Queries.GetStudentPlatformData;
 
 namespace Application.Features.Students.Profiles;
 
@@ -43,5 +44,20 @@ public class MappingProfiles : Profile
         CreateMap<Education, EducationsDto>();
         CreateMap<Certificate, CertificatesDto>();
         CreateMap<Ability, AbilitiesDto>();
+
+
+        CreateMap<StudentExam, ExamDto>()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Exam.Name))
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Exam.Description))
+            .ForMember(dest => dest.QuestionType, opt => opt.MapFrom(src => src.Exam.QuestionType))
+            .ForMember(dest => dest.QuestionCount, opt => opt.MapFrom(src => src.Exam.QuestionCount))
+            .ForMember(dest => dest.Time, opt => opt.MapFrom(src => src.Exam.Time));
+        CreateMap<StudentAppeal, StudentAppealDto>()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Appeal.Name))
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Appeal.Description));
+        CreateMap<Survey, SurveyDto>();
+        CreateMap<User, UserPlatformDto>();
+        CreateMap<Student, GetStudentPlatformDataResponse>().ReverseMap();
+
     }
 }
