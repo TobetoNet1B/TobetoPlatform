@@ -11,23 +11,23 @@ namespace Application.Features.Users.Commands.UpdateFromAuth;
 public class UpdateUserFromAuthCommand : IRequest<UpdatedUserFromAuthResponse>
 {
     public int Id { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    //public string FirstName { get; set; }
+    //public string LastName { get; set; }
     public string Password { get; set; }
     public string? NewPassword { get; set; }
 
     public UpdateUserFromAuthCommand()
     {
-        FirstName = string.Empty;
-        LastName = string.Empty;
+        //FirstName = string.Empty;
+        //LastName = string.Empty;
         Password = string.Empty;
     }
 
     public UpdateUserFromAuthCommand(int id, string firstName, string lastName, string password)
     {
         Id = id;
-        FirstName = firstName;
-        LastName = lastName;
+        //FirstName = firstName;
+        //LastName = lastName;
         Password = password;
     }
 
@@ -54,7 +54,7 @@ public class UpdateUserFromAuthCommand : IRequest<UpdatedUserFromAuthResponse>
         public async Task<UpdatedUserFromAuthResponse> Handle(UpdateUserFromAuthCommand request, CancellationToken cancellationToken)
         {
             User? user = await _userRepository.GetAsync(predicate: u => u.Id == request.Id, cancellationToken: cancellationToken);
-            await _userBusinessRules.UserShouldBeExistsWhenSelected(user);
+            //await _userBusinessRules.UserShouldBeExistsWhenSelected(user);
             await _userBusinessRules.UserPasswordShouldBeMatched(user: user!, request.Password);
             await _userBusinessRules.UserEmailShouldNotExistsWhenUpdate(user!.Id, user.Email);
 
@@ -62,7 +62,7 @@ public class UpdateUserFromAuthCommand : IRequest<UpdatedUserFromAuthResponse>
             if (request.NewPassword != null && !string.IsNullOrWhiteSpace(request.NewPassword))
             {
                 HashingHelper.CreatePasswordHash(
-                    request.Password,
+                    request.NewPassword,
                     passwordHash: out byte[] passwordHash,
                     passwordSalt: out byte[] passwordSalt
                 );

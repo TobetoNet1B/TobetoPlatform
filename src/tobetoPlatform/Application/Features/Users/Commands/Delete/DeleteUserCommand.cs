@@ -9,11 +9,11 @@ using static Application.Features.Users.Constants.UsersOperationClaims;
 
 namespace Application.Features.Users.Commands.Delete;
 
-public class DeleteUserCommand : IRequest<DeletedUserResponse>, ISecuredRequest
+public class DeleteUserCommand : IRequest<DeletedUserResponse>/*, ISecuredRequest*/
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, UsersOperationClaims.Delete };
+    //public string[] Roles => new[] { Admin, Write, UsersOperationClaims.Delete };
 
     public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand, DeletedUserResponse>
     {

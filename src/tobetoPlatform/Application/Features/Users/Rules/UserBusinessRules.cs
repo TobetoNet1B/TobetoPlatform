@@ -29,7 +29,7 @@ public class UserBusinessRules : BaseBusinessRules
         if (doesExist)
             throw new BusinessException(AuthMessages.UserDontExists);
     }
-
+    
     public Task UserPasswordShouldBeMatched(User user, string password)
     {
         if (!HashingHelper.VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))

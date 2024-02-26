@@ -54,7 +54,7 @@ public class UsersController : BaseController
     [HttpPut("FromAuth")]
     public async Task<IActionResult> UpdateFromAuth([FromBody] UpdateUserFromAuthCommand updateUserFromAuthCommand)
     {
-        updateUserFromAuthCommand.Id = getUserIdFromRequest();
+        //updateUserFromAuthCommand.Id = getUserIdFromRequest();
         UpdatedUserFromAuthResponse result = await Mediator.Send(updateUserFromAuthCommand);
         return Ok(result);
     }

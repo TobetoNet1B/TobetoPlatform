@@ -16,23 +16,23 @@ public class UpdateUserCommand : IRequest<UpdatedUserResponse>/*, ISecuredReques
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Email { get; set; }
-    public string Password { get; set; }
+    //public string Password { get; set; }
 
     public UpdateUserCommand()
     {
         FirstName = string.Empty;
         LastName = string.Empty;
         Email = string.Empty;
-        Password = string.Empty;
+        //Password = string.Empty;
     }
 
-    public UpdateUserCommand(int id, string firstName, string lastName, string email, string password)
+    public UpdateUserCommand(int id, string firstName, string lastName, string email/*, string password*/)
     {
         Id = id;
         FirstName = firstName;
         LastName = lastName;
         Email = email;
-        Password = password;
+        //Password = password;
     }
 
     //public string[] Roles => new[] { Admin, Write, UsersOperationClaims.Update };
@@ -56,14 +56,14 @@ public class UpdateUserCommand : IRequest<UpdatedUserResponse>/*, ISecuredReques
             await _userBusinessRules.UserShouldBeExistsWhenSelected(user);
             await _userBusinessRules.UserEmailShouldNotExistsWhenUpdate(user!.Id, user.Email);
             user = _mapper.Map(request, user);
-
+            /*
             HashingHelper.CreatePasswordHash(
                 request.Password,
                 passwordHash: out byte[] passwordHash,
                 passwordSalt: out byte[] passwordSalt
-            );
+            );*//*
             user!.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
+            user.PasswordSalt = passwordSalt;*/
             await _userRepository.UpdateAsync(user);
 
             UpdatedUserResponse response = _mapper.Map<UpdatedUserResponse>(user);
