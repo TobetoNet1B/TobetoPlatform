@@ -3,14 +3,15 @@ using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Experiences.Queries.GetById;
 
-public class GetByIdExperienceQuery : IRequest<GetByIdExperienceResponse>
+public class GetByIdExperienceQuery : IRequest<List<GetByIdExperienceResponse>>
 {
     public Guid Id { get; set; }
 
-    public class GetByIdExperienceQueryHandler : IRequestHandler<GetByIdExperienceQuery, GetByIdExperienceResponse>
+    public class GetByIdExperienceQueryHandler : IRequestHandler<GetByIdExperienceQuery, List<GetByIdExperienceResponse>>
     {
         private readonly IMapper _mapper;
         private readonly IExperienceRepository _experienceRepository;
@@ -23,12 +24,14 @@ public class GetByIdExperienceQuery : IRequest<GetByIdExperienceResponse>
             _experienceBusinessRules = experienceBusinessRules;
         }
 
-        public async Task<GetByIdExperienceResponse> Handle(GetByIdExperienceQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetByIdExperienceResponse>> Handle(GetByIdExperienceQuery request, CancellationToken cancellationToken)
         {
-            Experience? experience = await _experienceRepository.GetAsync(predicate: e => e.Id == request.Id, cancellationToken: cancellationToken);
-            await _experienceBusinessRules.ExperienceShouldExistWhenSelected(experience);
+            var experience = await _experienceRepository.GetListAsync(predicate: ssm => ssm.StudentId == request.Id, include: m => m.Include(s => s.City)
+                     , cancellationToken: cancellationToken);
 
-            GetByIdExperienceResponse response = _mapper.Map<GetByIdExperienceResponse>(experience);
+            CityDto cityDto = experience.Items.Select(ssm => _mapper.Map<CityDto>(ssm.City)).FirstOrDefault();
+
+            List<GetByIdExperienceResponse> response = _mapper.Map<List<GetByIdExperienceResponse>>(experience.Items);
             return response;
         }
     }

@@ -23,5 +23,11 @@ public class MappingProfiles : Profile
         CreateMap<Experience, GetByIdExperienceResponse>().ReverseMap();
         CreateMap<Experience, GetListExperienceListItemDto>().ReverseMap();
         CreateMap<IPaginate<Experience>, GetListResponse<GetListExperienceListItemDto>>().ReverseMap();
+
+        CreateMap<City, CityDto>()
+     .ForMember(desc => desc.CityName, opt => opt.MapFrom(src => src.Name))
+
+     .ReverseMap();
+        ;
     }
 }
