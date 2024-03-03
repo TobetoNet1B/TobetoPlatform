@@ -94,7 +94,7 @@ public class RegisterCommand : IRequest<RegisteredResponse>
 
 
 
-            //var enableEmailCommand = new EnableEmailAuthenticatorCommand(createdUser.Id, "http://localhost:5278");
+            //var enableEmailCommand = new EnableEmailAuthenticatorCommand(createdUser.Id, "https://www.pair3tobeto.online");
             //await _mediator.Send(enableEmailCommand);
 
 

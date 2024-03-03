@@ -68,9 +68,9 @@ public class EnableEmailAuthenticatorCommand : IRequest
                 new Mail
                 {
                     ToList = toEmailList,
-                    Subject = "Verify Your Email - NArchitecture",
+                    Subject = "E-posta adresinizi doğrulayın - Pair3 Tobeto",
                     TextBody =
-                        $"Click on the link to verify your email: {request.VerifyEmailUrlPrefix}?ActivationKey={HttpUtility.UrlEncode(addedEmailAuthenticator.ActivationKey)}"
+                        $"E-postanızı doğrulamak için bağlantıya tıklayın: {request.VerifyEmailUrlPrefix}?ActivationKey={HttpUtility.UrlEncode(addedEmailAuthenticator.ActivationKey)}"
                 }
             );
         }

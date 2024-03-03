@@ -7,8 +7,6 @@ using Application.Features.Auth.Commands.RevokeToken;
 using Application.Features.Auth.Commands.VerifyEmailAuthenticator;
 using Application.Features.Auth.Commands.VerifyOtpAuthenticator;
 using Core.Application.Dtos;
-using Core.Mailing;
-using Core.Security.EmailAuthenticator;
 using Core.Security.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -20,18 +18,13 @@ namespace WebAPI.Controllers;
 public class AuthController : BaseController
 {
     private readonly WebApiConfiguration _configuration;
-    //private readonly IMailService _mailService;
-    //private readonly IEmailAuthenticatorHelper _emailAuthenticatorHelper;
 
-    public AuthController(IConfiguration configuration /*IEmailAuthenticatorHelper emailAuthenticatorHelper, IMailService mailService*/)
+    public AuthController(IConfiguration configuration)
     {
         const string configurationSection = "WebAPIConfiguration";
         _configuration =
             configuration.GetSection(configurationSection).Get<WebApiConfiguration>()
             ?? throw new NullReferenceException($"\"{configurationSection}\" section cannot found in configuration.");
-
-        //_emailAuthenticatorHelper = emailAuthenticatorHelper ?? throw new ArgumentNullException(nameof(emailAuthenticatorHelper));
-        //_mailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
     }
 
     [HttpPost("Login")]
@@ -52,13 +45,6 @@ public class AuthController : BaseController
         RegisterCommand registerCommand = new() { UserForRegisterDto = userForRegisterDto, IpAddress = getIpAddress() };
         RegisteredResponse result = await Mediator.Send(registerCommand);
         setRefreshTokenToCookie(result.RefreshToken);
-        //var url = await _emailAuthenticatorHelper.CreateEmailActivationKey();
-        //Mail mail = new Mail();
-        //mail.Subject = "Hesabınızı onaylayınız.";
-        //mail.HtmlBody = $"Lütfen email hesabınızı onaylamak için linke <a href='http://localhost:5278{url}'>tıklayınız.</a>";
-        //mail.TextBody = userForRegisterDto.Email;
-        //await _mailService.SendEmailAsync(mail);
-        //EnableEmailAuthenticator();
         return Created(uri: "", result.AccessToken);
     }
 
