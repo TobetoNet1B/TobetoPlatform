@@ -63,6 +63,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<ISpeakerRepository, SpeakerRepository>();
         services.AddScoped<IStudentSocialMediaRepository, StudentSocialMediaRepository>();
         services.AddScoped<IStudentLessonRepository, StudentLessonRepository>();
+        services.AddScoped<ITobetoContactRepository, TobetoContactRepository>();
         return services;
     }
 }

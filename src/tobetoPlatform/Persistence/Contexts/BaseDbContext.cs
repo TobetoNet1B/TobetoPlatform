@@ -58,6 +58,7 @@ public class BaseDbContext : DbContext
     public DbSet<Speaker> Speakers { get; set; }
     public DbSet<StudentSocialMedia> StudentSocialMedias { get; set; }
     public DbSet<StudentLesson> StudentLessons { get; set; }
+    public DbSet<TobetoContact> TobetoContacts { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

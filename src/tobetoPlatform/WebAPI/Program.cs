@@ -11,6 +11,7 @@ using Core.WebAPI.Extensions.Swagger;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Persistence;
@@ -88,12 +89,25 @@ builder.Services.AddSwaggerGen(opt =>
 });
 
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowAll",
+//    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+//});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:3000")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
 });
+
+
 builder.Services.AddScoped<CloudinaryService>(); //CloudinaryService
 
 WebApplication app = builder.Build();

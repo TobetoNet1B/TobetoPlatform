@@ -57,7 +57,7 @@ public class UpdateUserTests : UserMockRepository
         _command.FirstName = "First";
         _command.LastName = "Last";
         _command.Email = "test@email.com";
-        _command.Password = "password";
+        //_command.Password = "password";
 
         UpdatedUserResponse result = await _handler.Handle(_command, CancellationToken.None);
 
@@ -71,7 +71,7 @@ public class UpdateUserTests : UserMockRepository
         _command.FirstName = "First";
         _command.LastName = "Last";
         _command.Email = "test@email.com";
-        _command.Password = "password";
+        //_command.Password = "password";
 
         async Task Action() => await _handler.Handle(_command, CancellationToken.None);
 
