@@ -64,6 +64,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IStudentSocialMediaRepository, StudentSocialMediaRepository>();
         services.AddScoped<IStudentLessonRepository, StudentLessonRepository>();
         services.AddScoped<ITobetoContactRepository, TobetoContactRepository>();
+        services.AddScoped<ITobetoSendMessageRepository, TobetoSendMessageRepository>();
         return services;
     }
 }

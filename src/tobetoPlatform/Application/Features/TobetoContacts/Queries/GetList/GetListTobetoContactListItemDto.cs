@@ -9,4 +9,5 @@ public class GetListTobetoContactListItemDto : IDto
     public string? Email { get; set; }
     public string? Message { get; set; }
     public bool? IsReaded { get; set; }
+    public DateTime? CreatedDate { get; set; }
 }

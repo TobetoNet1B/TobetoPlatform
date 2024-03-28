@@ -402,6 +402,14 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "TobetoContacts.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "TobetoContacts.Delete" });
         #endregion
+        #region TobetoSendMessages
+        seeds.Add(new OperationClaim { Id = ++id, Name = "TobetoSendMessages.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "TobetoSendMessages.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "TobetoSendMessages.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "TobetoSendMessages.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "TobetoSendMessages.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "TobetoSendMessages.Delete" });
+        #endregion
         return seeds;
     }
 }
