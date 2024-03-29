@@ -7,4 +7,6 @@ public class GetListStudentClassroomListItemDto : IDto
     public Guid Id { get; set; }
     public Guid StudentId { get; set; }
     public Guid ClassroomId { get; set; }
+    public ClassrromGetDto Classroom { get; set; }
+    public UserDto User { get; set; }
 }
